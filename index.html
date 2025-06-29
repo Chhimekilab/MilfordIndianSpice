@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milford India Spice – Authentic Indian Cuisine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <style>
+    :root {
+      --primary: #8b0000;
+      --accent: #e2a94c;
+      --bg-dark: #1b1b1b;
+      --bg-light: #fffaf6;
+      --text-light: #f0f0f0;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-light);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Navigation */
+    nav {
+      background: linear-gradient(135deg, var(--primary), #a00000);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    nav .logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .mobile-menu span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .mobile-menu {
+        display: flex;
+      }
+    }
+    
+    /* Hero Section - Fixed for GoDaddy */
+    .swiper {
+      width: 100%;
+      height: 60vh;
+      min-height: 500px;
+      max-height: 700px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .swiper-wrapper {
+      height: 100%;
+    }
+    
+    .swiper-slide {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      font-family: var(--font-serif);
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .swiper-slide::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(139,0,0,0.3));
+      z-index: 1;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+      font-weight: 600;
+    }
+    
+    .hero-content p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: #eee;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Buttons */
+    .btn {
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      color: #333;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(226, 169, 76, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(226, 169, 76, 0.4);
+    }
+    
+    /* Container */
+    .container {
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    /* Section Headings */
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 50px;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      border-radius: 2px;
+    }
+    
+    /* Order Buttons Section */
+    .order-section {
+      background: linear-gradient(135deg, #fff, #f8f8f8);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+    
+    .order-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+    
+    .menu-item {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    .menu-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .menu-item:hover img {
+      transform: scale(1.1);
+    }
+    
+    .menu-item-content {
+      padding: 25px;
+    }
+    
+    .menu-item h3 {
+      color: var(--primary);
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .menu-item p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .price {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    
+    /* Announcements */
+    .announcements {
+      background: linear-gradient(135deg, #fff3e6, #f0e6d2);
+      padding: 50px 30px;
+      margin: 80px auto;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .announcements::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(226,169,76,0.1) 0%, transparent 70%);
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+    
+    /* Swiper Navigation Styles - Enhanced for GoDaddy */
+    .swiper-pagination {
+      bottom: 30px !important;
+      z-index: 10 !important;
+    }
+    
+    .swiper-pagination-bullet {
+      background: rgba(255, 255, 255, 0.5) !important;
+      opacity: 1 !important;
+      width: 12px !important;
+      height: 12px !important;
+      margin: 0 8px !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .swiper-pagination-bullet-active {
+      background: var(--accent) !important;
+      transform: scale(1.2) !important;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: var(--accent) !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50% !important;
+      backdrop-filter: blur(10px) !important;
+      transition: all 0.3s ease !important;
+      z-index: 10 !important;
+    }
+    
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+      background: rgba(255, 255, 255, 0.2) !important;
+      transform: scale(1.1) !important;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 20px !important;
+      font-weight: bold !important;
+    }
+    
+    .announcement-content {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .announcement-item {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      padding: 15px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+    }
+    
+    /* Reviews */
+    .review-box {
+      background: white;
+      border-left: 5px solid var(--primary);
+      margin: 30px auto;
+      max-width: 700px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    
+    .review-box:hover {
+      transform: translateX(10px);
+    }
+    
+    .review-box::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.3;
+      font-family: var(--font-serif);
+    }
+    
+    .review-box p {
+      font-style: italic;
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    
+    .review-box strong {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--bg-dark), #2a2a2a);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+    }
+    
+    .social-links {
+      margin: 30px 0;
+    }
+    
+    footer a {
+      color: var(--accent);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    
+    footer a:hover {
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 15px;
+      }
+      
+      .order-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn {
+        padding: 12px 25px;
+        margin: 5px;
+      }
+      
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .swiper {
+        height: 50vh;
+        min-height: 400px;
+        max-height: 500px;
+      }
+    }
+    
+    /* Fallback styles for slower connections */
+    .swiper-slide.loading {
+      background-color: #333;
+      background-image: linear-gradient(45deg, rgba(0,0,0,0.6), rgba(139,0,0,0.3));
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">Milford India Spice</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Hero Slider -->
+<div class="swiper hero-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+      <div class="hero-content">
+        <h1>Spices. Culture. Warmth.</h1>
+        <p>Experience Authentic Indian Flavors in Every Bite</p>
+        <a href="#menu" class="btn">Explore Menu</a>
+      </div>
+    </div>
+    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+      <div class="hero-content">
+        <h1>Tradition Served Fresh</h1>
+        <p>Handcrafted Recipes Passed Down Through Generations</p>
+        <a href="tel:+15084785800" class="btn">Order Now</a>
+      </div>
+    </div>
+    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+      <div class="hero-content">
+        <h1>Bold Recipes, Timeless Taste</h1>
+        <p>Where Every Meal is a Celebration</p>
+        <a href="#contact" class="btn">Visit Us</a>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<!-- Order Now Section -->
+<div class="order-section">
+  <h3 style="color: var(--primary); font-family: var(--font-serif); margin-bottom: 20px;">Order Your Favorites</h3>
+  <div class="order-buttons">
+    <a href="tel:+15084785800" class="btn">📞 Call Us</a>
+    <a href="https://www.ubereats.com" target="_blank" class="btn">🚗 Uber Eats</a>
+    <a href="https://www.doordash.com" target="_blank" class="btn">🚚 DoorDash</a>
+    <a href="https://www.grubhub.com" target="_blank" class="btn">🍽️ Grubhub</a>
+    <a href="https://order.toasttab.com/online/milfordhunangourmet" target="_blank" class="btn">🔥 Toast Order</a>
+  </div>
+</div>
+
+<!-- Announcements -->
+<section class="announcements">
+  <h2>Announcements & Promotions</h2>
+  <div class="announcement-content">
+    <div class="announcement-item">
+      <strong>🎉 Opening Soon:</strong>  We're opening soon and can't wait to share our culinary creations with you! 🥘
+    </div>
+    <div class="announcement-item">
+      <strong>🕒 Extended Hours:</strong> Now open Fridays until 11 PM for your late-night cravings!
+    </div>
+    <div class="announcement-item">
+      <strong>🌟 Catering Available:</strong> Planning a party? We now cater for private events and gatherings. Call us to create your perfect feast!
+    </div>
+  </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="container">
+  <h2>Menu Highlights</h2>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vegetable Samosa" />
+      <div class="menu-item-content">
+        <h3>Vegetable Samosa</h3>
+        <p>Crispy golden pastry filled with perfectly spiced potatoes, peas, and aromatic herbs. Served with our signature mint chutney.</p>
+        <div class="price">$7.00</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Butter Chicken" />
+      <div class="menu-item-content">
+        <h3>Butter Chicken</h3>
+        <p>Tender roasted chicken simmered in our rich, creamy tomato sauce with subtle spices. A true crowd favorite.</p>
+        <div class="price">$18.00</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Chicken Biryani" />
+      <div class="menu-item-content">
+        <h3>Chicken Biryani</h3>
+        <p>Fragrant basmati rice layered with saffron-marinated chicken, slow-cooked with traditional spices and garnished with fried onions.</p>
+        <div class="price">$19.00</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka Masala" />
+      <div class="menu-item-content">
+        <h3>Paneer Tikka Masala</h3>
+        <p>Fresh cottage cheese cubes in our signature creamy tomato-fenugreek gravy, perfectly balanced with warming spices.</p>
+        <div class="price">$16.00</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;">
+    <a href="#" class="btn">📖 View Full Menu</a>
+  </div>
+</section>
+
+<!-- Customer Reviews -->
+<section class="container">
+  <h2>What Our Customers Say</h2>
+  <div class="review-box">
+    <p>Absolutely the best Indian food in the area! The flavors are incredibly authentic, and the staff treats you like family. Every dish we've tried has been phenomenal.</p>
+    <strong>– Priya K. ⭐⭐⭐⭐⭐</strong>
+  </div>
+  <div class="review-box">
+    <p>The tandoori shrimp and chicken biryani were both absolutely fantastic! The spices are perfectly balanced, and the portions are generous. Highly recommend for both dine-in and takeout.</p>
+    <strong>– Michael T. ⭐⭐⭐⭐⭐</strong>
+  </div>
+  <div class="review-box">
+    <p>This place is a hidden gem! The paneer tikka masala is the best I've ever had, and the naan bread is always fresh and warm. Can't wait to come back!</p>
+    <strong>– Sarah L. ⭐⭐⭐⭐⭐</strong>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p style="font-size: 1.2rem; margin-bottom: 10px;">Follow Our Culinary Journey</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+    <a href="https://twitter.com" target="_blank">Twitter</a>
+    <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+  </div>
+  <p>&copy; 2025 Milford India Spice. All rights reserved.</p>
+  <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">📍 Located in Milford | 📞 (508) 478-5800</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script>
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Load background images after DOM is ready
+    const slides = document.querySelectorAll('.swiper-slide[data-bg]');
+    slides.forEach(slide => {
+      const img = new Image();
+      img.onload = function() {
+        slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('${slide.getAttribute('data-bg')}')`;
+        slide.classList.remove('loading');
+      };
+      img.src = slide.getAttribute('data-bg');
+    });
+    
+    // Initialize Hero Swiper with enhanced settings for GoDaddy
+    let heroSwiper;
+    
+    function initSwiper() {
+      if (typeof Swiper !== 'undefined') {
+        heroSwiper = new Swiper('.hero-swiper', {
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          },
+          effect: 'slide',
+          speed: 1000,
+          spaceBetween: 0,
+          slidesPerView: 1,
+          watchSlidesProgress: true,
+          watchSlidesVisibility: true,
+          updateOnWindowResize: true,
+          observer: true,
+          observeParents: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+            dynamicBullets: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          breakpoints: {
+            320: {
+              height: 400,
+            },
+            768: {
+              height: 500,
+            },
+            1024: {
+              height: 600,
+            }
+          },
+          on: {
+            init: function () {
+              console.log('Swiper initialized successfully');
+            },
+            slideChange: function () {
+              // Add any slide change animations here
+            }
+          }
+        });
+      } else {
+        // Retry if Swiper hasn't loaded yet
+        setTimeout(initSwiper, 100);
+      }
+    }
+    
+    // Initialize swiper
+    initSwiper();
+    
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add scroll effect to navigation
+    let ticking = false;
+    function updateNavbar() {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 100) {
+        nav.style.background = 'linear-gradient(135deg, rgba(139,0,0,0.95), rgba(160,0,0,0.95))';
+      } else {
+        nav.style.background = 'linear-gradient(135deg, var(--primary), #a00000)';
+      }
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNavbar);
+        ticking = true;
+      }
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animation
+    document.querySelectorAll('.menu-item, .review-box').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+    
+    // Handle mobile menu (if you want to add functionality later)
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navList = document.querySelector('nav ul');
+    
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', function() {
+        navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+    
+  });
+</script>
+
+</body>
+</html>
