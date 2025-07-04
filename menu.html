@@ -197,10 +197,47 @@
     .tab-content {
       display: block;
       margin-bottom: 80px;
+      scroll-margin-top: 100px;
     }
     
     .tab-content.active {
       animation: fadeIn 0.3s ease-in;
+    }
+    
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 30px 20px;
+      background: linear-gradient(135deg, #fff, #f8f8f8);
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+    
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+      color: #666;
+      font-style: italic;
     }
     
     @keyframes fadeIn {
@@ -359,6 +396,10 @@
 
   <!-- Appetizers Tab -->
   <section id="appetizers" class="tab-content active">
+    <div class="section-header">
+      <h2 class="section-title">🥟 Appetizers</h2>
+      <p class="section-subtitle">Start your journey with our flavorful appetizers and street food favorites</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -492,6 +533,10 @@
 
   <!-- Soups Tab -->
   <section id="soups" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🍲 Soups</h2>
+      <p class="section-subtitle">Warm, comforting soups made with traditional recipes and fresh ingredients</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -521,6 +566,10 @@
 
   <!-- Salads Tab -->
   <section id="salads" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🥗 Salads</h2>
+      <p class="section-subtitle">Fresh, healthy salads with your choice of protein and house-made dressings</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -558,6 +607,10 @@
 
   <!-- Chicken Tab -->
   <section id="chicken" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🐔 Chicken Specialties</h2>
+      <p class="section-subtitle">Tender chicken dishes in rich curries, tandoori preparations, and aromatic biryanis</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -675,6 +728,10 @@
 
   <!-- Lamb Tab -->
   <section id="lamb" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🐑 Lamb Specialties</h2>
+      <p class="section-subtitle">Premium lamb dishes prepared with authentic spices and traditional cooking methods</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -760,6 +817,10 @@
 
   <!-- Goat Tab -->
   <section id="goat" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🐐 Goat Specialties</h2>
+      <p class="section-subtitle">Traditional goat curry preparations with bold flavors and aromatic spices</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -797,6 +858,10 @@
 
   <!-- Seafood Tab -->
   <section id="seafood" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🦐 Seafood Specialties</h2>
+      <p class="section-subtitle">Fresh seafood cooked in aromatic curries, tandoori style, and coastal preparations</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -890,6 +955,10 @@
 
   <!-- Vegetarian Tab -->
   <section id="vegetarian" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🌱 Vegetarian Delights</h2>
+      <p class="section-subtitle">Plant-based dishes with rich flavors, fresh vegetables, and aromatic spices</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -1047,6 +1116,10 @@
 
   <!-- Breads Tab -->
   <section id="breads" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🫓 Fresh Baked Breads</h2>
+      <p class="section-subtitle">Tandoor-baked naan, roti, and parathas made fresh to complement your meal</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -1132,6 +1205,10 @@
 
   <!-- Sides Tab -->
   <section id="sides" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🍚 Sides & Accompaniments</h2>
+      <p class="section-subtitle">Perfect sides, rice, chutneys, and pickles to enhance your dining experience</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
@@ -1209,6 +1286,10 @@
 
   <!-- Desserts Tab -->
   <section id="desserts" class="tab-content">
+    <div class="section-header">
+      <h2 class="section-title">🍮 Sweet Endings</h2>
+      <p class="section-subtitle">Traditional Indian desserts to perfectly finish your meal</p>
+    </div>
     <div class="menu-grid">
       <article class="menu-item">
         <div class="menu-item-header">
