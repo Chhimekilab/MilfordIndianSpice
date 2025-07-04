@@ -185,6 +185,7 @@
       background: var(--primary);
       color: white;
       box-shadow: 0 3px 10px rgba(139, 0, 0, 0.3);
+      transform: scale(1.05);
     }
     
     .tab-btn:hover:not(.active) {
@@ -194,11 +195,11 @@
     
     /* Tab Content */
     .tab-content {
-      display: none;
+      display: block;
+      margin-bottom: 80px;
     }
     
     .tab-content.active {
-      display: block;
       animation: fadeIn 0.3s ease-in;
     }
     
@@ -1251,27 +1252,55 @@
 
 <script>
 function showTab(tabName) {
-  // Hide all tab contents
-  const tabContents = document.querySelectorAll('.tab-content');
-  tabContents.forEach(content => {
-    content.classList.remove('active');
-  });
-  
   // Remove active class from all tab buttons
   const tabButtons = document.querySelectorAll('.tab-btn');
   tabButtons.forEach(btn => {
     btn.classList.remove('active');
   });
   
-  // Show selected tab content
-  document.getElementById(tabName).classList.add('active');
-  
   // Add active class to clicked button
   event.target.classList.add('active');
+  
+  // Smooth scroll to the selected section
+  const targetSection = document.getElementById(tabName);
+  if (targetSection) {
+    targetSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
 }
 
-// Mobile menu functionality
+// Intersection Observer to highlight active tab while scrolling
 document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.tab-content');
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove active class from all buttons
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Find and activate the corresponding tab button
+        const sectionId = entry.target.id;
+        const correspondingButton = document.querySelector(`[onclick="showTab('${sectionId}')"]`);
+        if (correspondingButton) {
+          correspondingButton.classList.add('active');
+        }
+      }
+    });
+  }, {
+    threshold: 0.3,
+    rootMargin: '-20% 0px -60% 0px'
+  });
+  
+  // Observe all sections
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+  
+  // Mobile menu functionality
   const mobileMenu = document.querySelector('.mobile-menu');
   const navList = document.querySelector('nav ul');
   
