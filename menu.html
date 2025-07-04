@@ -108,7 +108,17 @@
       font-size: 1.2rem;
       opacity: 0.9;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 20px;
+    }
+    
+    .restaurant-info {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-top: 20px;
+    }
+    
+    .restaurant-info div {
+      margin: 5px 0;
     }
     
     /* Container */
@@ -148,13 +158,13 @@
     .menu-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
+      gap: 25px;
     }
     
     .menu-item {
       background: white;
       border-radius: 15px;
-      overflow: hidden;
+      padding: 25px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
       transition: all 0.3s ease;
       border: 1px solid rgba(226, 169, 76, 0.1);
@@ -169,8 +179,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 25px;
-      padding-bottom: 15px;
+      margin-bottom: 15px;
     }
     
     .menu-item h3 {
@@ -179,6 +188,7 @@
       font-size: 1.4rem;
       margin: 0;
       flex: 1;
+      line-height: 1.3;
     }
     
     .price {
@@ -186,47 +196,13 @@
       font-weight: 600;
       font-size: 1.2rem;
       margin-left: 15px;
+      flex-shrink: 0;
     }
     
     .menu-item p {
       color: #666;
-      padding: 0 25px 25px;
       line-height: 1.6;
-    }
-    
-    .spice-level {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(226, 169, 76, 0.1);
-      color: var(--accent);
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin-top: 10px;
-      margin-left: 25px;
-      margin-bottom: 15px;
-    }
-    
-    /* Vegetarian/Vegan indicators */
-    .dietary {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 8px;
-      border-radius: 12px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      margin: 10px 5px 15px 25px;
-    }
-    
-    .vegetarian {
-      background: rgba(34, 139, 34, 0.1);
-      color: #228B22;
-    }
-    
-    .vegan {
-      background: rgba(0, 128, 0, 0.1);
-      color: #008000;
+      font-size: 0.95rem;
     }
     
     /* Order Section */
@@ -310,6 +286,16 @@
         flex-direction: column;
         align-items: center;
       }
+      
+      .menu-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .price {
+        margin-left: 0;
+        margin-top: 5px;
+      }
     }
   </style>
 </head>
@@ -333,8 +319,14 @@
 
 <!-- Page Header -->
 <div class="page-header">
-  <h1>Our Complete Menu</h1>
-  <p>Discover the full range of authentic Indian flavors crafted with traditional recipes and the finest spices</p>
+  <h1>Complete Menu</h1>
+  <p>Authentic Indian, Nepalese & Indo-Chinese Cuisine</p>
+  <div class="restaurant-info">
+    <div>📍 130 Main Street, Milford, MA 01757</div>
+    <div>📞 (508) 478-5800 | 📧 support@milfordindiaspice.com</div>
+    <div>🕒 Open Hours: 11 AM – 10 PM (Wednesday to Monday) | Closed on Tuesday</div>
+    <div>🍽️ Dine-In • 🚗 Takeout • 🛵 Delivery • 📦 Catering Available</div>
+  </div>
 </div>
 
 <!-- Order Section -->
@@ -357,409 +349,399 @@
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
+          <h3>Samosa Chaat</h3>
+          <span class="price">$9</span>
+        </div>
+        <p>Crushed vegetable samosas, chickpeas, yogurt, tamarind chutney, mint chutney, and spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
           <h3>Vegetable Samosa</h3>
-          <span class="price">$7.00</span>
+          <span class="price">$7</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Crispy golden pastry filled with perfectly spiced potatoes, peas, and aromatic herbs. Served with our signature mint chutney.</p>
+        <p>Crispy pastry shells filled with spiced mashed potatoes and green peas, served with tangy tamarind chutney.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Chicken Tikka</h3>
-          <span class="price">$12.00</span>
+          <h3>Vegetable Pakora</h3>
+          <span class="price">$7</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Tender chicken marinated in yogurt and spices, grilled to perfection in our tandoor oven.</p>
+        <p>Crisp fritters made from assorted vegetables dipped in spiced gram flour batter and deep-fried to golden perfection.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Paneer Tikka</h3>
-          <span class="price">$11.00</span>
+          <h3>Chicken Chowmein</h3>
+          <span class="price">$13</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Fresh cottage cheese cubes marinated in spiced yogurt and grilled with bell peppers and onions.</p>
+        <p>Wok-tossed noodles with chicken, cabbage, bell peppers, carrots, onions, and scallions in soy and sesame sauce.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Mixed Pakoras</h3>
-          <span class="price">$8.00</span>
+          <h3>Vegetable Chowmein</h3>
+          <span class="price">$12</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Assorted vegetables coated in spiced chickpea batter and deep-fried until golden crispy.</p>
+        <p>Stir-fried noodles with fresh vegetables, bell peppers, onions, carrots, and scallions in a soy-sesame glaze.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Tandoori Shrimp</h3>
-          <span class="price">$14.00</span>
+          <h3>Shrimp Chowmein</h3>
+          <span class="price">$12</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Jumbo shrimp marinated in aromatic spices and grilled in our tandoor oven.</p>
+        <p>Shrimp stir-fried with noodles, bell peppers, cabbage, onions, and carrots in savory soy-sesame sauce.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>House Special Chowmein</h3>
+          <span class="price">$12</span>
+        </div>
+        <p>Signature mixed-style chowmein with noodles, vegetables, and scallions in a sesame-soy chili sauce.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Paneer Chilli</h3>
+          <span class="price">$12</span>
+        </div>
+        <p>Cottage cheese cubes tossed with onions and bell peppers in a bold chili-garlic sauce.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
           <h3>Aloo Tikki</h3>
-          <span class="price">$6.00</span>
+          <span class="price">$12</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Crispy potato patties served with tangy tamarind and mint chutneys.</p>
+        <p>Pan-fried potato patties spiced with green peas, roasted chickpea flour, and tangy chaat masala.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Pakora</h3>
+          <span class="price">$9</span>
+        </div>
+        <p>Crispy chicken strips dipped in chickpea batter and fried with garlic, ginger, and house spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken 65</h3>
+          <span class="price">$9</span>
+        </div>
+        <p>Tender chicken bites stir-fried with mustard seeds, curry leaves, garlic, and spicy chili sauce.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Indian Tandoori Wings (Smoked)</h3>
+          <span class="price">$10</span>
+        </div>
+        <p>Tandoori-marinated chicken wings char-grilled and tossed in a smoky vindaloo-buffalo glaze.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Kashmiri Tikki</h3>
+          <span class="price">$9</span>
+        </div>
+        <p>Minced chicken thigh marinated in Kashmiri chili, garlic, ginger, and mustard oil, grilled in the tandoor.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Vegetable Platter</h3>
+          <span class="price">$15</span>
+        </div>
+        <p>Sampler platter featuring samosa, pakora, aloo tikki, gobi pakora, Kashmiri tikka, and chicken pakora.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Momo (Steamed/Fried)</h3>
+          <span class="price">$13</span>
+        </div>
+        <p>Steamed or fried chicken momos filled with herbs and spices, served with spicy tomato-sesame chutney.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Vegetable Momo (Steamed/Fried)</h3>
+          <span class="price">$12</span>
+        </div>
+        <p>Steamed or fried vegetable momos stuffed with seasoned veggies, served with tomato-sesame peanut chutney.</p>
       </div>
     </div>
   </section>
 
-  <!-- Main Courses - Chicken -->
+  <!-- Soups -->
+  <section class="menu-category">
+    <h2 class="category-title">Soups</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Mulligatawny Soup (Daal Soup)</h3>
+          <span class="price">$6</span>
+        </div>
+        <p>Hearty lentil-based soup with aromatic spices, vegetables, and a touch of lemon.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Coconut Tomato Soup</h3>
+          <span class="price">$7</span>
+        </div>
+        <p>Creamy coconut and tomato soup with ginger, garlic, and southern Indian spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Noodles Soup (Indo-Chinese)</h3>
+          <span class="price">$8</span>
+        </div>
+        <p>Savory chicken broth with noodles, vegetables, and Indo-Chinese seasoning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Salads -->
+  <section class="menu-category">
+    <h2 class="category-title">Salads</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Fresh Veg Salad</h3>
+          <span class="price">$7</span>
+        </div>
+        <p>Mixed greens, cherry tomatoes, cucumbers, red onions, shredded carrots, and lemon vinaigrette.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Fresh Chicken Salad</h3>
+          <span class="price">$8</span>
+        </div>
+        <p>Mixed greens, grilled chicken, cherry tomatoes, cucumbers, onions, and lemon vinaigrette.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Fresh Shrimp Salad</h3>
+          <span class="price">$9</span>
+        </div>
+        <p>Mixed greens, marinated grilled shrimp, cherry tomatoes, cucumbers, and citrus dressing.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Fresh Paneer Salad</h3>
+          <span class="price">$8</span>
+        </div>
+        <p>Mixed greens with grilled paneer, cucumbers, tomatoes, and a tangy tamarind dressing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chicken -->
   <section class="menu-category">
     <h2 class="category-title">Chicken Specialties</h2>
     <div class="menu-grid">
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Butter Chicken</h3>
-          <span class="price">$18.00</span>
-        </div>
-        <div class="spice-level">🌶️ Mild</div>
-        <p>Our signature dish! Tender roasted chicken simmered in rich, creamy tomato sauce with subtle spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
           <h3>Chicken Tikka Masala</h3>
-          <span class="price">$18.00</span>
+          <span class="price">$17</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Grilled chicken tikka in a luscious tomato-cream sauce with aromatic spices.</p>
+        <p>Tender boneless chicken cooked in a creamy tomato-fenugreek sauce with butter and mild spices—a globally loved classic.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Chicken Vindaloo</h3>
-          <span class="price">$17.00</span>
+          <h3>Chicken Curry</h3>
+          <span class="price">$16</span>
         </div>
-        <div class="spice-level">🌶️🌶️ Hot</div>
-        <p>Fiery Goan-style chicken curry with vinegar, red chilies, and aromatic spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Korma</h3>
-          <span class="price">$17.00</span>
-        </div>
-        <div class="spice-level">🌶️ Mild</div>
-        <p>Mild and creamy chicken curry with cashews, almonds, and fragrant spices.</p>
+        <p>Boneless chicken simmered in a tomato-onion curry with turmeric, cumin, coriander, and traditional North Indian spices.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Saag</h3>
-          <span class="price">$17.00</span>
+          <span class="price">$17</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Tender chicken cooked with fresh spinach, garlic, and traditional spices.</p>
+        <p>Chicken cooked with finely chopped spinach, garlic, onion, and spices, finished with a hint of cream for earthy richness.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Tandoori Chicken</h3>
-          <span class="price">$16.00</span>
+          <h3>Chicken Vindaloo</h3>
+          <span class="price">$17</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Half chicken marinated in yogurt and spices, roasted in our tandoor oven.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vegetarian Dishes -->
-  <section class="menu-category">
-    <h2 class="category-title">Vegetarian Delights</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Paneer Tikka Masala</h3>
-          <span class="price">$16.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Fresh cottage cheese cubes in our signature creamy tomato-fenugreek gravy.</p>
+        <p>Goan-style spicy curry with chicken, vinegar, garlic, and red chilies—finished with potatoes for a hearty, tangy bite.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Dal Makhani</h3>
-          <span class="price">$14.00</span>
+          <h3>Chicken Korma</h3>
+          <span class="price">$17</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <div class="spice-level">🌶️ Mild</div>
-        <p>Slow-cooked black lentils in a rich, creamy tomato sauce with butter and cream.</p>
+        <p>Boneless chicken in a smooth Mughlai-style cashew-cream curry, infused with ginger, garlic, and warming spices.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Palak Paneer</h3>
-          <span class="price">$15.00</span>
+          <h3>Chicken Kadai</h3>
+          <span class="price">$17</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Fresh cottage cheese cubes in creamy spinach gravy with garlic and ginger.</p>
+        <p>Chicken sautéed in a traditional kadhai with onions, peppers, tomatoes, and a signature blend of ground masalas.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Chana Masala</h3>
-          <span class="price">$13.00</span>
+          <h3>Butter Chicken</h3>
+          <span class="price">$18</span>
         </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Chickpeas cooked in a tangy tomato-onion gravy with aromatic spices.</p>
+        <p>Tandoor-roasted chicken simmered in a rich, buttery tomato cream sauce with subtle sweetness and warming spices.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Aloo Gobi</h3>
-          <span class="price">$12.00</span>
+          <h3>Coconut Chicken Curry</h3>
+          <span class="price">$17</span>
         </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Cauliflower and potatoes stir-fried with turmeric, cumin, and fresh herbs.</p>
+        <p>Chicken cooked in creamy coconut milk with mustard seeds, curry leaves, and a delicate balance of mild southern spices.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
-          <h3>Vegetable Biryani</h3>
-          <span class="price">$15.00</span>
+          <h3>Chicken Mango Curry</h3>
+          <span class="price">$17</span>
         </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Fragrant basmati rice layered with mixed vegetables, saffron, and aromatic spices.</p>
+        <p>A tropical mango-based chicken curry with warming cloves and chili flakes for a sweet-spicy depth of flavor.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Rice & Biryani -->
-  <section class="menu-category">
-    <h2 class="category-title">Rice & Biryani</h2>
-    <div class="menu-grid">
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Jalfrezi</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Stir-fried chicken with onions, peppers, and cauliflower in a tangy tomato-chili glaze—sweet, spicy, and vibrant.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Tandoori Chicken (Half)</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Half chicken marinated in yogurt, Kashmiri chili, ginger, and mustard oil, tandoor-roasted and served with naan or rice and makhani sauce.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Tandoori Chicken (Full)</h3>
+          <span class="price">$27</span>
+        </div>
+        <p>Full chicken marinated in yogurt, Kashmiri chili, ginger, and mustard oil, tandoor-roasted and served with naan or rice and makhani sauce.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Tikka</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Juicy chicken thighs marinated in sour cream, black pepper, and lemon juice, grilled and served with naan or rice and makhani sauce.</p>
+      </div>
+      
       <div class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Biryani</h3>
-          <span class="price">$19.00</span>
+          <span class="price">$18</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Fragrant basmati rice layered with saffron-marinated chicken, slow-cooked with traditional spices.</p>
+        <p>Long-grain basmati rice layered with chicken, saffron, biryani spices, mint, yogurt, nuts, and fried onions; served with raita.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lamb -->
+  <section class="menu-category">
+    <h2 class="category-title">Lamb Specialties</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Tikka Masala</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Boneless lamb cooked in a creamy tomato sauce with butter, cream, and fenugreek for a mildly spiced, smoky flavor.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Curry</h3>
+          <span class="price">$18</span>
+        </div>
+        <p>Tender lamb simmered in a tomato-onion gravy with cumin, coriander, turmeric, and warming Indian spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Saag</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Lamb cooked with finely chopped spinach, onions, garlic, and spices, finished with cream for an earthy, wholesome curry.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Vindaloo</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Spicy Goan-style lamb curry with red chili, garlic, vinegar, and potatoes for a bold, tangy, and fiery flavor profile.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Korma</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Lamb cooked in a rich Mughlai-style cashew cream sauce with garlic, onion, ginger, and a touch of dry fenugreek.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Kadai</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Lamb sautéed with peppers, tomatoes, and onions in a traditional kadhai masala blend for bold and aromatic flavor.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Rogan Josh</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Kashmiri-style lamb curry in a yogurt base, simmered with onions, fennel, cardamom, and warm spices for a rich, red finish.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Seekh Kebab</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Spiced ground lamb skewers blended with coriander, garlic, and garam masala, grilled in the tandoor until juicy and aromatic.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Tikka</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Tender lamb leg marinated in yogurt and spices, char-grilled and served with makhani sauce and your choice of naan or rice.</p>
       </div>
       
       <div class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Biryani</h3>
-          <span class="price">$21.00</span>
+          <span class="price">$19</span>
         </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Premium basmati rice with tender lamb pieces, aromatic spices, and saffron.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Shrimp Biryani</h3>
-          <span class="price">$20.00</span>
-        </div>
-        <div class="spice-level">🌶️ Medium</div>
-        <p>Succulent shrimp layered with fragrant basmati rice and exotic spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Saffron Rice</h3>
-          <span class="price">$8.00</span>
-        </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <p>Aromatic basmati rice cooked with saffron and whole spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Jeera Rice</h3>
-          <span class="price">$7.00</span>
-        </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <p>Fragrant basmati rice tempered with cumin seeds and ghee.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Plain Basmati Rice</h3>
-          <span class="price">$5.00</span>
-        </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <p>Perfectly cooked long-grain basmati rice.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Breads -->
-  <section class="menu-category">
-    <h2 class="category-title">Fresh Baked Breads</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Garlic Naan</h3>
-          <span class="price">$5.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Fresh naan bread topped with minced garlic and cilantro, baked in our tandoor.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Butter Naan</h3>
-          <span class="price">$4.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Soft, fluffy naan bread brushed with butter and baked fresh in our tandoor.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Cheese Naan</h3>
-          <span class="price">$6.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Naan stuffed with melted cheese and herbs, baked until golden.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Roti</h3>
-          <span class="price">$3.00</span>
-        </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <p>Whole wheat flatbread cooked on our tandoor, light and healthy.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Paratha</h3>
-          <span class="price">$4.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Flaky, layered flatbread cooked with ghee until golden and crispy.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Onion Kulcha</h3>
-          <span class="price">$5.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Soft bread stuffed with spiced onions and fresh herbs.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Desserts -->
-  <section class="menu-category">
-    <h2 class="category-title">Sweet Endings</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Gulab Jamun</h3>
-          <span class="price">$6.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Soft milk dumplings soaked in aromatic rose-flavored sugar syrup.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Kheer</h3>
-          <span class="price">$5.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Traditional rice pudding cooked with milk, cardamom, and garnished with nuts.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Kulfi</h3>
-          <span class="price">$5.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Traditional Indian ice cream flavored with cardamom and pistachios.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Ras Malai</h3>
-          <span class="price">$7.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Soft cottage cheese dumplings in sweet, thickened milk with pistachios.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Beverages -->
-  <section class="menu-category">
-    <h2 class="category-title">Beverages</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Mango Lassi</h3>
-          <span class="price">$4.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Creamy yogurt drink blended with fresh mango and a touch of cardamom.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Masala Chai</h3>
-          <span class="price">$3.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Traditional spiced tea brewed with cardamom, ginger, and warming spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Sweet Lassi</h3>
-          <span class="price">$3.50</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Refreshing yogurt-based drink sweetened and flavored with rose water.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Indian Coffee</h3>
-          <span class="price">$3.00</span>
-        </div>
-        <div class="dietary vegetarian">🌱 Vegetarian</div>
-        <p>Strong South Indian coffee brewed with chicory and served with milk.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Fresh Lime Soda</h3>
-          <span class="price">$3.00</span>
-        </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <p>Refreshing soda water with fresh lime juice and a pinch of black salt.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Soft Drinks</h3>
-          <span class="price">$2.50</span>
-        </div>
-        <div class="dietary vegan">🌿 Vegan</div>
-        <p>Coke, Pepsi, Sprite, Orange Fanta, and other popular sodas.</p>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<!-- Footer -->
+        <p>Basmati rice layered with spiced lamb, saffron, yogurt, mint, nuts, and fried onions, serve
