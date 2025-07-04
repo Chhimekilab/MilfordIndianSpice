@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full Menu – Milford India Spice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #8b0000;
+      --accent: #e2a94c;
+      --bg-dark: #1b1b1b;
+      --bg-light: #fffaf6;
+      --text-light: #f0f0f0;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-light);
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Navigation - Same as main site */
+    nav {
+      background: linear-gradient(135deg, var(--primary), #a00000);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    nav .logo {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--accent);
+    }
+    
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .mobile-menu span {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 3px 0;
+      transition: 0.3s;
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .mobile-menu {
+        display: flex;
+      }
+    }
+    
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(135deg, var(--primary), #a00000);
+      color: white;
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+    
+    .page-header h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+    }
+    
+    .page-header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    /* Menu Categories */
+    .menu-category {
+      margin-bottom: 80px;
+    }
+    
+    .category-title {
+      font-family: var(--font-serif);
+      font-size: 2.5rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .category-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      border-radius: 2px;
+    }
+    
+    /* Menu Grid */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    
+    .menu-item {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(226, 169, 76, 0.1);
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+    
+    .menu-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 25px;
+      padding-bottom: 15px;
+    }
+    
+    .menu-item h3 {
+      color: var(--primary);
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      margin: 0;
+      flex: 1;
+    }
+    
+    .price {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+    
+    .menu-item p {
+      color: #666;
+      padding: 0 25px 25px;
+      line-height: 1.6;
+    }
+    
+    .spice-level {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(226, 169, 76, 0.1);
+      color: var(--accent);
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin-top: 10px;
+      margin-left: 25px;
+      margin-bottom: 15px;
+    }
+    
+    /* Vegetarian/Vegan indicators */
+    .dietary {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin: 10px 5px 15px 25px;
+    }
+    
+    .vegetarian {
+      background: rgba(34, 139, 34, 0.1);
+      color: #228B22;
+    }
+    
+    .vegan {
+      background: rgba(0, 128, 0, 0.1);
+      color: #008000;
+    }
+    
+    /* Order Section */
+    .order-section {
+      background: linear-gradient(135deg, #fff, #f8f8f8);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      margin: 60px auto;
+      max-width: 1000px;
+    }
+    
+    .order-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      color: #333;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(226, 169, 76, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(226, 169, 76, 0.4);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--bg-dark), #2a2a2a);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    
+    .social-links {
+      margin: 30px 0;
+    }
+    
+    footer a {
+      color: var(--accent);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: white;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .container {
+        padding: 40px 15px;
+      }
+      
+      .category-title {
+        font-size: 2rem;
+      }
+      
+      .order-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo">Milford India Spice</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>Our Complete Menu</h1>
+  <p>Discover the full range of authentic Indian flavors crafted with traditional recipes and the finest spices</p>
+</div>
+
+<!-- Order Section -->
+<div class="order-section">
+  <h3 style="color: var(--primary); font-family: var(--font-serif); margin-bottom: 20px;">Order Your Favorites</h3>
+  <div class="order-buttons">
+    <a href="tel:+15084785800" class="btn">📞 Call Us</a>
+    <a href="https://www.ubereats.com" target="_blank" class="btn">🚗 Uber Eats</a>
+    <a href="https://www.doordash.com" target="_blank" class="btn">🚚 DoorDash</a>
+    <a href="https://www.grubhub.com" target="_blank" class="btn">🍽️ Grubhub</a>
+    <a href="https://order.toasttab.com/online/milfordhunangourmet" target="_blank" class="btn">🔥 Toast Order</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Appetizers -->
+  <section class="menu-category">
+    <h2 class="category-title">Appetizers</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Vegetable Samosa</h3>
+          <span class="price">$7.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Crispy golden pastry filled with perfectly spiced potatoes, peas, and aromatic herbs. Served with our signature mint chutney.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Tikka</h3>
+          <span class="price">$12.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Tender chicken marinated in yogurt and spices, grilled to perfection in our tandoor oven.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Paneer Tikka</h3>
+          <span class="price">$11.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Fresh cottage cheese cubes marinated in spiced yogurt and grilled with bell peppers and onions.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Mixed Pakoras</h3>
+          <span class="price">$8.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Assorted vegetables coated in spiced chickpea batter and deep-fried until golden crispy.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Tandoori Shrimp</h3>
+          <span class="price">$14.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Jumbo shrimp marinated in aromatic spices and grilled in our tandoor oven.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Aloo Tikki</h3>
+          <span class="price">$6.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Crispy potato patties served with tangy tamarind and mint chutneys.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Courses - Chicken -->
+  <section class="menu-category">
+    <h2 class="category-title">Chicken Specialties</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Butter Chicken</h3>
+          <span class="price">$18.00</span>
+        </div>
+        <div class="spice-level">🌶️ Mild</div>
+        <p>Our signature dish! Tender roasted chicken simmered in rich, creamy tomato sauce with subtle spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Tikka Masala</h3>
+          <span class="price">$18.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Grilled chicken tikka in a luscious tomato-cream sauce with aromatic spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Vindaloo</h3>
+          <span class="price">$17.00</span>
+        </div>
+        <div class="spice-level">🌶️🌶️ Hot</div>
+        <p>Fiery Goan-style chicken curry with vinegar, red chilies, and aromatic spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Korma</h3>
+          <span class="price">$17.00</span>
+        </div>
+        <div class="spice-level">🌶️ Mild</div>
+        <p>Mild and creamy chicken curry with cashews, almonds, and fragrant spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Saag</h3>
+          <span class="price">$17.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Tender chicken cooked with fresh spinach, garlic, and traditional spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Tandoori Chicken</h3>
+          <span class="price">$16.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Half chicken marinated in yogurt and spices, roasted in our tandoor oven.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vegetarian Dishes -->
+  <section class="menu-category">
+    <h2 class="category-title">Vegetarian Delights</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Paneer Tikka Masala</h3>
+          <span class="price">$16.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Fresh cottage cheese cubes in our signature creamy tomato-fenugreek gravy.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Dal Makhani</h3>
+          <span class="price">$14.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <div class="spice-level">🌶️ Mild</div>
+        <p>Slow-cooked black lentils in a rich, creamy tomato sauce with butter and cream.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Palak Paneer</h3>
+          <span class="price">$15.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Fresh cottage cheese cubes in creamy spinach gravy with garlic and ginger.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chana Masala</h3>
+          <span class="price">$13.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Chickpeas cooked in a tangy tomato-onion gravy with aromatic spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Aloo Gobi</h3>
+          <span class="price">$12.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Cauliflower and potatoes stir-fried with turmeric, cumin, and fresh herbs.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Vegetable Biryani</h3>
+          <span class="price">$15.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Fragrant basmati rice layered with mixed vegetables, saffron, and aromatic spices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rice & Biryani -->
+  <section class="menu-category">
+    <h2 class="category-title">Rice & Biryani</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Biryani</h3>
+          <span class="price">$19.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Fragrant basmati rice layered with saffron-marinated chicken, slow-cooked with traditional spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Lamb Biryani</h3>
+          <span class="price">$21.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Premium basmati rice with tender lamb pieces, aromatic spices, and saffron.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Shrimp Biryani</h3>
+          <span class="price">$20.00</span>
+        </div>
+        <div class="spice-level">🌶️ Medium</div>
+        <p>Succulent shrimp layered with fragrant basmati rice and exotic spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Saffron Rice</h3>
+          <span class="price">$8.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <p>Aromatic basmati rice cooked with saffron and whole spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Jeera Rice</h3>
+          <span class="price">$7.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <p>Fragrant basmati rice tempered with cumin seeds and ghee.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Plain Basmati Rice</h3>
+          <span class="price">$5.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <p>Perfectly cooked long-grain basmati rice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breads -->
+  <section class="menu-category">
+    <h2 class="category-title">Fresh Baked Breads</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Garlic Naan</h3>
+          <span class="price">$5.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Fresh naan bread topped with minced garlic and cilantro, baked in our tandoor.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Butter Naan</h3>
+          <span class="price">$4.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Soft, fluffy naan bread brushed with butter and baked fresh in our tandoor.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Cheese Naan</h3>
+          <span class="price">$6.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Naan stuffed with melted cheese and herbs, baked until golden.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Roti</h3>
+          <span class="price">$3.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <p>Whole wheat flatbread cooked on our tandoor, light and healthy.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Paratha</h3>
+          <span class="price">$4.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Flaky, layered flatbread cooked with ghee until golden and crispy.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Onion Kulcha</h3>
+          <span class="price">$5.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Soft bread stuffed with spiced onions and fresh herbs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desserts -->
+  <section class="menu-category">
+    <h2 class="category-title">Sweet Endings</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Gulab Jamun</h3>
+          <span class="price">$6.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Soft milk dumplings soaked in aromatic rose-flavored sugar syrup.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Kheer</h3>
+          <span class="price">$5.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Traditional rice pudding cooked with milk, cardamom, and garnished with nuts.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Kulfi</h3>
+          <span class="price">$5.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Traditional Indian ice cream flavored with cardamom and pistachios.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Ras Malai</h3>
+          <span class="price">$7.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Soft cottage cheese dumplings in sweet, thickened milk with pistachios.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beverages -->
+  <section class="menu-category">
+    <h2 class="category-title">Beverages</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Mango Lassi</h3>
+          <span class="price">$4.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Creamy yogurt drink blended with fresh mango and a touch of cardamom.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Masala Chai</h3>
+          <span class="price">$3.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Traditional spiced tea brewed with cardamom, ginger, and warming spices.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Sweet Lassi</h3>
+          <span class="price">$3.50</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Refreshing yogurt-based drink sweetened and flavored with rose water.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Indian Coffee</h3>
+          <span class="price">$3.00</span>
+        </div>
+        <div class="dietary vegetarian">🌱 Vegetarian</div>
+        <p>Strong South Indian coffee brewed with chicory and served with milk.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Fresh Lime Soda</h3>
+          <span class="price">$3.00</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <p>Refreshing soda water with fresh lime juice and a pinch of black salt.</p>
+      </div>
+      
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>Soft Drinks</h3>
+          <span class="price">$2.50</span>
+        </div>
+        <div class="dietary vegan">🌿 Vegan</div>
+        <p>Coke, Pepsi, Sprite, Orange Fanta, and other popular sodas.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
