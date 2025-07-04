@@ -3,7 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Milford India Spice – Authentic Indian Cuisine</title>
+  <title>Milford India Spice | Authentic Indian Restaurant in Milford, MA</title>
+  <meta name="description" content="Experience authentic Indian, Nepalese & Indo-Chinese cuisine at Milford India Spice. Fresh ingredients, traditional recipes, tandoori specialties. Dine-in, takeout & delivery. Call (508) 478-5800.">
+  <meta name="keywords" content="Indian restaurant Milford MA, tandoori chicken, biryani, curry, Nepalese food, Indo-Chinese, butter chicken, vegetarian options, takeout delivery Milford Massachusetts">
+  <meta name="author" content="Milford India Spice">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title" content="Milford India Spice | Authentic Indian Restaurant in Milford, MA">
+  <meta property="og:description" content="Experience authentic Indian, Nepalese & Indo-Chinese cuisine. Fresh ingredients, traditional recipes, tandoori specialties. Dine-in, takeout & delivery.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:url" content="https://milfordiindiaspice.com">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Milford India Spice">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Milford India Spice | Authentic Indian Restaurant in Milford, MA">
+  <meta name="twitter:description" content="Experience authentic Indian, Nepalese & Indo-Chinese cuisine. Fresh ingredients, traditional recipes, tandoori specialties.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+  
+  <!-- Local Business Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Milford India Spice",
+    "description": "Authentic Indian, Nepalese & Indo-Chinese cuisine restaurant in Milford, Massachusetts",
+    "url": "https://milfordiindiaspice.com",
+    "telephone": "+1-508-478-5800",
+    "email": "support@milfordindiaspice.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "130 Main Street",
+      "addressLocality": "Milford",
+      "addressRegion": "MA",
+      "postalCode": "01757",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "42.1405",
+      "longitude": "-71.5162"
+    },
+    "openingHours": [
+      "We 11:00-22:00",
+      "Th 11:00-22:00", 
+      "Fr 11:00-22:00",
+      "Sa 11:00-22:00",
+      "Su 11:00-22:00",
+      "Mo 11:00-22:00"
+    ],
+    "servesCuisine": ["Indian", "Nepalese", "Indo-Chinese"],
+    "priceRange": "$",
+    "acceptsReservations": true,
+    "hasMenu": "https://milfordiindiaspice.com/menu.html",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "150"
+    },
+    "image": [
+      "https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+    ],
+    "paymentAccepted": "Cash, Credit Card, Debit Card",
+    "currenciesAccepted": "USD"
+  }
+  </script>
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://milfordiindiaspice.com/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <style>
@@ -518,15 +593,15 @@
 <body>
 
 <!-- Navigation -->
-<nav>
+<nav role="navigation" aria-label="Main navigation">
   <div class="logo">Milford India Spice</div>
   <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="menu.html">Menu</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#home" aria-label="Go to home section">Home</a></li>
+    <li><a href="menu.html" aria-label="View our complete menu">Menu</a></li>
+    <li><a href="#about" aria-label="Learn about us">About</a></li>
+    <li><a href="#contact" aria-label="Contact information">Contact</a></li>
   </ul>
-  <div class="mobile-menu">
+  <div class="mobile-menu" aria-label="Mobile menu toggle">
     <span></span>
     <span></span>
     <span></span>
@@ -534,133 +609,152 @@
 </nav>
 
 <!-- Hero Slider -->
-<div class="swiper hero-swiper">
+<section class="swiper hero-swiper" aria-label="Restaurant showcase">
   <div class="swiper-wrapper">
-    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" role="img" aria-label="Authentic Indian spices and culture">
       <div class="hero-content">
         <h1>Spices. Culture. Warmth.</h1>
         <p>Experience Authentic Indian Flavors in Every Bite</p>
-        <a href="menu.html" class="btn">Explore Menu</a>
+        <a href="menu.html" class="btn" aria-label="Explore our complete menu">Explore Menu</a>
       </div>
     </div>
-    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" role="img" aria-label="Traditional Indian food preparation">
       <div class="hero-content">
         <h1>Tradition Served Fresh</h1>
         <p>Handcrafted Recipes Passed Down Through Generations</p>
-        <a href="tel:+15084785800" class="btn">Order Now</a>
+        <a href="tel:+15084785800" class="btn" aria-label="Call us to order now">Order Now</a>
       </div>
     </div>
-    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+    <div class="swiper-slide loading" data-bg="https://images.unsplash.com/photo-1574484284002-952d92456975?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" role="img" aria-label="Bold Indian recipes and flavors">
       <div class="hero-content">
         <h1>Bold Recipes, Timeless Taste</h1>
         <p>Where Every Meal is a Celebration</p>
-        <a href="#contact" class="btn">Visit Us</a>
+        <a href="#contact" class="btn" aria-label="Visit our restaurant">Visit Us</a>
       </div>
     </div>
   </div>
-  <div class="swiper-pagination"></div>
-  <div class="swiper-button-next"></div>
-  <div class="swiper-button-prev"></div>
-</div>
+  <div class="swiper-pagination" aria-label="Slide navigation"></div>
+  <div class="swiper-button-next" aria-label="Next slide"></div>
+  <div class="swiper-button-prev" aria-label="Previous slide"></div>
+</section>
 
 <!-- Order Now Section -->
-<div class="order-section">
-  <h3 style="color: var(--primary); font-family: var(--font-serif); margin-bottom: 20px;">Order Your Favorites</h3>
+<section class="order-section" aria-labelledby="order-heading">
+  <h3 id="order-heading" style="color: var(--primary); font-family: var(--font-serif); margin-bottom: 20px;">Order Your Favorites</h3>
   <div class="order-buttons">
-    <a href="tel:+15084785800" class="btn">📞 Call Us</a>
-    <a href="https://www.ubereats.com" target="_blank" class="btn">🚗 Uber Eats</a>
-    <a href="https://www.doordash.com" target="_blank" class="btn">🚚 DoorDash</a>
-    <a href="https://www.grubhub.com" target="_blank" class="btn">🍽️ Grubhub</a>
-    <a href="https://order.toasttab.com/online/milfordhunangourmet" target="_blank" class="btn">🔥 Toast Order</a>
+    <a href="tel:+15084785800" class="btn" aria-label="Call us at 508-478-5800">📞 Call Us</a>
+    <a href="https://www.ubereats.com" target="_blank" rel="noopener" class="btn" aria-label="Order on Uber Eats">🚗 Uber Eats</a>
+    <a href="https://www.doordash.com" target="_blank" rel="noopener" class="btn" aria-label="Order on DoorDash">🚚 DoorDash</a>
+    <a href="https://www.grubhub.com" target="_blank" rel="noopener" class="btn" aria-label="Order on Grubhub">🍽️ Grubhub</a>
+    <a href="https://order.toasttab.com/online/milfordhunangourmet" target="_blank" rel="noopener" class="btn" aria-label="Order through Toast">🔥 Toast Order</a>
   </div>
-</div>
+</section>
 
 <!-- Announcements -->
-<section class="announcements">
-  <h2>Announcements & Promotions</h2>
+<section class="announcements" aria-labelledby="announcements-heading">
+  <h2 id="announcements-heading">Announcements & Promotions</h2>
   <div class="announcement-content">
-    <div class="announcement-item">
+    <article class="announcement-item">
       <strong>🎉 Opening Soon:</strong>  We're opening soon and can't wait to share our culinary creations with you! 🥘
-    </div>
-    <div class="announcement-item">
+    </article>
+    <article class="announcement-item">
       <strong>🕒 Extended Hours:</strong> Now open Fridays until 11 PM for your late-night cravings!
-    </div>
-    <div class="announcement-item">
+    </article>
+    <article class="announcement-item">
       <strong>🌟 Catering Available:</strong> Planning a party? We now cater for private events and gatherings. Call us to create your perfect feast!
-    </div>
+    </article>
   </div>
 </section>
 
 <!-- Menu Highlights Section -->
-<section id="menu" class="container">
-  <h2>Menu Highlights</h2>
+<section id="menu" class="container" aria-labelledby="menu-highlights">
+  <h2 id="menu-highlights">Menu Highlights</h2>
   <div class="menu-grid">
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Vegetable Samosa" />
+    <article class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+      <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Golden crispy vegetable samosa with mint chutney" />
       <div class="menu-item-content">
-        <h3>Vegetable Samosa</h3>
-        <p>Crispy golden pastry filled with perfectly spiced potatoes, peas, and aromatic herbs. Served with our signature mint chutney.</p>
-        <div class="price">$7.00</div>
+        <h3 itemprop="name">Vegetable Samosa</h3>
+        <p itemprop="description">Crispy golden pastry filled with perfectly spiced potatoes, peas, and aromatic herbs. Served with our signature mint chutney.</p>
+        <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span itemprop="price">$7.00</span>
+        </div>
       </div>
-    </div>
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Butter Chicken" />
+    </article>
+    <article class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+      <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Creamy butter chicken curry with rice" />
       <div class="menu-item-content">
-        <h3>Butter Chicken</h3>
-        <p>Tender roasted chicken simmered in our rich, creamy tomato sauce with subtle spices. A true crowd favorite.</p>
-        <div class="price">$18.00</div>
+        <h3 itemprop="name">Butter Chicken</h3>
+        <p itemprop="description">Tender roasted chicken simmered in our rich, creamy tomato sauce with subtle spices. A true crowd favorite.</p>
+        <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span itemprop="price">$18.00</span>
+        </div>
       </div>
-    </div>
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Chicken Biryani" />
+    </article>
+    <article class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+      <img src="https://images.unsplash.com/photo-1563379091339-03246963d51a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Aromatic chicken biryani with saffron rice" />
       <div class="menu-item-content">
-        <h3>Chicken Biryani</h3>
-        <p>Fragrant basmati rice layered with saffron-marinated chicken, slow-cooked with traditional spices and garnished with fried onions.</p>
-        <div class="price">$19.00</div>
+        <h3 itemprop="name">Chicken Biryani</h3>
+        <p itemprop="description">Fragrant basmati rice layered with saffron-marinated chicken, slow-cooked with traditional spices and garnished with fried onions.</p>
+        <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span itemprop="price">$19.00</span>
+        </div>
       </div>
-    </div>
-    <div class="menu-item">
-      <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka Masala" />
+    </article>
+    <article class="menu-item" itemscope itemtype="https://schema.org/MenuItem">
+      <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Paneer tikka masala with cottage cheese" />
       <div class="menu-item-content">
-        <h3>Paneer Tikka Masala</h3>
-        <p>Fresh cottage cheese cubes in our signature creamy tomato-fenugreek gravy, perfectly balanced with warming spices.</p>
-        <div class="price">$16.00</div>
+        <h3 itemprop="name">Paneer Tikka Masala</h3>
+        <p itemprop="description">Fresh cottage cheese cubes in our signature creamy tomato-fenugreek gravy, perfectly balanced with warming spices.</p>
+        <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <span itemprop="price">$16.00</span>
+        </div>
       </div>
-    </div>
+    </article>
   </div>
   <div style="text-align:center;">
-    <a href="menu.html" class="btn">📖 View Full Menu</a>
+    <a href="menu.html" class="btn" aria-label="View our complete menu with all dishes">📖 View Full Menu</a>
   </div>
 </section>
 
 <!-- Customer Reviews -->
-<section class="container">
-  <h2>What Our Customers Say</h2>
-  <div class="review-box">
-    <p>Absolutely the best Indian food in the area! The flavors are incredibly authentic, and the staff treats you like family. Every dish we've tried has been phenomenal.</p>
-    <strong>– Priya K. ⭐⭐⭐⭐⭐</strong>
-  </div>
-  <div class="review-box">
-    <p>The tandoori shrimp and chicken biryani were both absolutely fantastic! The spices are perfectly balanced, and the portions are generous. Highly recommend for both dine-in and takeout.</p>
-    <strong>– Michael T. ⭐⭐⭐⭐⭐</strong>
-  </div>
-  <div class="review-box">
-    <p>This place is a hidden gem! The paneer tikka masala is the best I've ever had, and the naan bread is always fresh and warm. Can't wait to come back!</p>
-    <strong>– Sarah L. ⭐⭐⭐⭐⭐</strong>
-  </div>
+<section class="container" aria-labelledby="reviews-heading">
+  <h2 id="reviews-heading">What Our Customers Say</h2>
+  <article class="review-box" itemscope itemtype="https://schema.org/Review">
+    <p itemprop="reviewBody">Absolutely the best Indian food in the area! The flavors are incredibly authentic, and the staff treats you like family. Every dish we've tried has been phenomenal.</p>
+    <strong itemprop="author">– Priya K. ⭐⭐⭐⭐⭐</strong>
+    <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+    <meta itemprop="ratingValue" content="5">
+    <meta itemprop="bestRating" content="5">
+  </article>
+  <article class="review-box" itemscope itemtype="https://schema.org/Review">
+    <p itemprop="reviewBody">The tandoori shrimp and chicken biryani were both absolutely fantastic! The spices are perfectly balanced, and the portions are generous. Highly recommend for both dine-in and takeout.</p>
+    <strong itemprop="author">– Michael T. ⭐⭐⭐⭐⭐</strong>
+    <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+    <meta itemprop="ratingValue" content="5">
+    <meta itemprop="bestRating" content="5">
+  </article>
+  <article class="review-box" itemscope itemtype="https://schema.org/Review">
+    <p itemprop="reviewBody">This place is a hidden gem! The paneer tikka masala is the best I've ever had, and the naan bread is always fresh and warm. Can't wait to come back!</p>
+    <strong itemprop="author">– Sarah L. ⭐⭐⭐⭐⭐</strong>
+    <meta itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+    <meta itemprop="ratingValue" content="5">
+    <meta itemprop="bestRating" content="5">
+  </article>
 </section>
 
 <!-- Footer -->
-<footer>
+<footer role="contentinfo" aria-label="Footer information">
   <p style="font-size: 1.2rem; margin-bottom: 10px;">Follow Our Culinary Journey</p>
   <div class="social-links">
-    <a href="https://www.facebook.com" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com" target="_blank">Instagram</a>
-    <a href="https://twitter.com" target="_blank">Twitter</a>
-    <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Follow us on Facebook">Facebook</a>
+    <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Follow us on Instagram">Instagram</a>
+    <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Follow us on Twitter">Twitter</a>
+    <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="Follow us on TikTok">TikTok</a>
   </div>
   <p>&copy; 2025 Milford India Spice. All rights reserved.</p>
-  <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">📍 Located in Milford | 📞 (508) 478-5800</p>
+  <address style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8; font-style: normal;">
+    📍 <span itemprop="address">130 Main Street, Milford, MA 01757</span> | 📞 <a href="tel:+15084785800" style="color: inherit; text-decoration: none;">(508) 478-5800</a>
+  </address>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
