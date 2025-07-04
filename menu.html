@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Full Menu – Milford India Spice</title>
+  <title>Menu - Milford India Spice | Authentic Indian, Nepalese & Indo-Chinese Cuisine</title>
+  <meta name="description" content="Explore our complete menu of authentic Indian, Nepalese & Indo-Chinese cuisine. Fresh ingredients, traditional recipes, and bold flavors at Milford India Spice.">
+  <meta name="keywords" content="Indian restaurant Milford MA, Nepalese food, Indo-Chinese cuisine, tandoori, biryani, curry, takeout delivery">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --primary: #8b0000;
       --accent: #e2a94c;
-      --bg-dark: #1b1b1b;
       --bg-light: #fffaf6;
-      --text-light: #f0f0f0;
       --font-serif: 'Playfair Display', serif;
       --font-sans: 'Inter', sans-serif;
     }
@@ -29,7 +29,7 @@
       line-height: 1.6;
     }
     
-    /* Navigation - Same as main site */
+    /* Navigation */
     nav {
       background: linear-gradient(135deg, var(--primary), #a00000);
       color: white;
@@ -66,7 +66,6 @@
       color: var(--accent);
     }
     
-    /* Mobile Menu */
     .mobile-menu {
       display: none;
       flex-direction: column;
@@ -81,111 +80,165 @@
       transition: 0.3s;
     }
     
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-      }
-      .mobile-menu {
-        display: flex;
-      }
-    }
-    
     /* Page Header */
     .page-header {
       background: linear-gradient(135deg, var(--primary), #a00000);
       color: white;
       text-align: center;
-      padding: 80px 20px 60px;
+      padding: 60px 20px 40px;
     }
     
     .page-header h1 {
       font-family: var(--font-serif);
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       margin-bottom: 1rem;
     }
     
     .page-header p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto 20px;
+      margin-bottom: 20px;
     }
     
     .restaurant-info {
-      font-size: 1rem;
+      font-size: 0.9rem;
       opacity: 0.8;
-      margin-top: 20px;
+      max-width: 800px;
+      margin: 0 auto;
     }
     
     .restaurant-info div {
-      margin: 5px 0;
+      margin: 3px 0;
+    }
+    
+    /* Order Section */
+    .order-section {
+      background: linear-gradient(135deg, #fff, #f8f8f8);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      margin: 30px auto;
+      max-width: 1000px;
+      border-radius: 15px;
+    }
+    
+    .order-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    
+    .btn {
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      color: #333;
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      box-shadow: 0 3px 10px rgba(226, 169, 76, 0.3);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(226, 169, 76, 0.4);
     }
     
     /* Container */
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
     
-    /* Menu Categories */
-    .menu-category {
-      margin-bottom: 80px;
-    }
-    
-    .category-title {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      color: var(--primary);
-      text-align: center;
+    /* Tab Navigation */
+    .tab-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
       margin-bottom: 40px;
-      position: relative;
+      background: white;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     }
     
-    .category-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: linear-gradient(135deg, var(--accent), #d19b3d);
-      border-radius: 2px;
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #666;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 3px 10px rgba(139, 0, 0, 0.3);
+    }
+    
+    .tab-btn:hover:not(.active) {
+      background: rgba(139, 0, 0, 0.1);
+      color: var(--primary);
+    }
+    
+    /* Tab Content */
+    .tab-content {
+      display: none;
+    }
+    
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     /* Menu Grid */
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
     }
     
     .menu-item {
       background: white;
-      border-radius: 15px;
-      padding: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.08);
       transition: all 0.3s ease;
-      border: 1px solid rgba(226, 169, 76, 0.1);
+      border-left: 3px solid var(--accent);
     }
     
     .menu-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
     }
     
     .menu-item-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
     
     .menu-item h3 {
       color: var(--primary);
       font-family: var(--font-serif);
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       margin: 0;
       flex: 1;
       line-height: 1.3;
@@ -193,71 +246,34 @@
     
     .price {
       color: var(--accent);
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-left: 15px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-left: 10px;
       flex-shrink: 0;
     }
     
     .menu-item p {
-      color: #666;
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-    
-    /* Order Section */
-    .order-section {
-      background: linear-gradient(135deg, #fff, #f8f8f8);
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border-radius: 20px;
-      margin: 60px auto;
-      max-width: 1000px;
-    }
-    
-    .order-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .btn {
-      background: linear-gradient(135deg, var(--accent), #d19b3d);
-      color: #333;
-      padding: 15px 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      margin: 10px;
-      display: inline-block;
-      box-shadow: 0 4px 15px rgba(226, 169, 76, 0.3);
-    }
-    
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(226, 169, 76, 0.4);
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.5;
     }
     
     /* Footer */
     footer {
-      background: linear-gradient(135deg, var(--bg-dark), #2a2a2a);
+      background: linear-gradient(135deg, #1b1b1b, #2a2a2a);
       color: white;
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 40px 20px;
+      margin-top: 60px;
     }
     
     .social-links {
-      margin: 30px 0;
+      margin: 20px 0;
     }
     
     footer a {
       color: var(--accent);
-      margin: 0 15px;
+      margin: 0 10px;
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
@@ -269,33 +285,15 @@
     
     /* Responsive Design */
     @media (max-width: 768px) {
-      .menu-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      
-      .container {
-        padding: 40px 15px;
-      }
-      
-      .category-title {
-        font-size: 2rem;
-      }
-      
-      .order-buttons {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .menu-item-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .price {
-        margin-left: 0;
-        margin-top: 5px;
-      }
+      nav ul { display: none; }
+      .mobile-menu { display: flex; }
+      .container { padding: 20px 15px; }
+      .menu-grid { grid-template-columns: 1fr; gap: 15px; }
+      .tab-nav { padding: 8px; gap: 3px; }
+      .tab-btn { padding: 10px 15px; font-size: 0.8rem; }
+      .order-buttons { flex-direction: column; align-items: center; }
+      .menu-item-header { flex-direction: column; align-items: flex-start; }
+      .price { margin-left: 0; margin-top: 5px; }
     }
   </style>
 </head>
@@ -318,430 +316,456 @@
 </nav>
 
 <!-- Page Header -->
-<div class="page-header">
-  <h1>Complete Menu</h1>
+<header class="page-header">
+  <h1>Our Complete Menu</h1>
   <p>Authentic Indian, Nepalese & Indo-Chinese Cuisine</p>
   <div class="restaurant-info">
     <div>📍 130 Main Street, Milford, MA 01757</div>
     <div>📞 (508) 478-5800 | 📧 support@milfordindiaspice.com</div>
-    <div>🕒 Open Hours: 11 AM – 10 PM (Wednesday to Monday) | Closed on Tuesday</div>
-    <div>🍽️ Dine-In • 🚗 Takeout • 🛵 Delivery • 📦 Catering Available</div>
+    <div>🕒 Open: 11 AM – 10 PM (Wed-Mon) | Closed Tuesday</div>
+    <div>🍽️ Dine-In • 🚗 Takeout • 🛵 Delivery • 📦 Catering</div>
   </div>
-</div>
+</header>
 
 <!-- Order Section -->
-<div class="order-section">
-  <h3 style="color: var(--primary); font-family: var(--font-serif); margin-bottom: 20px;">Order Your Favorites</h3>
+<section class="order-section">
+  <h2 style="color: var(--primary); font-family: var(--font-serif); margin-bottom: 15px; font-size: 1.5rem;">Order Now</h2>
   <div class="order-buttons">
-    <a href="tel:+15084785800" class="btn">📞 Call Us</a>
+    <a href="tel:+15084785800" class="btn">📞 Call (508) 478-5800</a>
     <a href="https://www.ubereats.com" target="_blank" class="btn">🚗 Uber Eats</a>
     <a href="https://www.doordash.com" target="_blank" class="btn">🚚 DoorDash</a>
     <a href="https://www.grubhub.com" target="_blank" class="btn">🍽️ Grubhub</a>
     <a href="https://order.toasttab.com/online/milfordhunangourmet" target="_blank" class="btn">🔥 Toast Order</a>
   </div>
-</div>
+</section>
 
-<div class="container">
+<main class="container">
 
-  <!-- Appetizers -->
-  <section class="menu-category">
-    <h2 class="category-title">Appetizers</h2>
+  <!-- Tab Navigation -->
+  <nav class="tab-nav" role="tablist">
+    <button class="tab-btn active" onclick="showTab('appetizers')" role="tab">🥟 Appetizers</button>
+    <button class="tab-btn" onclick="showTab('soups')" role="tab">🍲 Soups</button>
+    <button class="tab-btn" onclick="showTab('salads')" role="tab">🥗 Salads</button>
+    <button class="tab-btn" onclick="showTab('chicken')" role="tab">🐔 Chicken</button>
+    <button class="tab-btn" onclick="showTab('lamb')" role="tab">🐑 Lamb</button>
+    <button class="tab-btn" onclick="showTab('goat')" role="tab">🐐 Goat</button>
+    <button class="tab-btn" onclick="showTab('seafood')" role="tab">🦐 Seafood</button>
+    <button class="tab-btn" onclick="showTab('vegetarian')" role="tab">🌱 Vegetarian</button>
+    <button class="tab-btn" onclick="showTab('breads')" role="tab">🫓 Breads</button>
+    <button class="tab-btn" onclick="showTab('sides')" role="tab">🍚 Sides</button>
+    <button class="tab-btn" onclick="showTab('desserts')" role="tab">🍮 Desserts</button>
+  </nav>
+
+  <!-- Appetizers Tab -->
+  <section id="appetizers" class="tab-content active">
     <div class="menu-grid">
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Samosa Chaat</h3>
           <span class="price">$9</span>
         </div>
-        <p>Crushed vegetable samosas, chickpeas, yogurt, tamarind chutney, mint chutney, and spices.</p>
-      </div>
+        <p>Crushed vegetable samosas with chickpeas, yogurt, and chutneys</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Vegetable Samosa</h3>
           <span class="price">$7</span>
         </div>
-        <p>Crispy pastry shells filled with spiced mashed potatoes and green peas, served with tangy tamarind chutney.</p>
-      </div>
+        <p>Crispy pastry with spiced potatoes and peas, served with tamarind chutney</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Vegetable Pakora</h3>
           <span class="price">$7</span>
         </div>
-        <p>Crisp fritters made from assorted vegetables dipped in spiced gram flour batter and deep-fried to golden perfection.</p>
-      </div>
+        <p>Mixed vegetable fritters in spiced gram flour batter</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Chowmein</h3>
           <span class="price">$13</span>
         </div>
-        <p>Wok-tossed noodles with chicken, cabbage, bell peppers, carrots, onions, and scallions in soy and sesame sauce.</p>
-      </div>
+        <p>Wok-tossed noodles with chicken and vegetables in soy-sesame sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Vegetable Chowmein</h3>
           <span class="price">$12</span>
         </div>
-        <p>Stir-fried noodles with fresh vegetables, bell peppers, onions, carrots, and scallions in a soy-sesame glaze.</p>
-      </div>
+        <p>Stir-fried noodles with fresh vegetables in soy-sesame glaze</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Shrimp Chowmein</h3>
           <span class="price">$12</span>
         </div>
-        <p>Shrimp stir-fried with noodles, bell peppers, cabbage, onions, and carrots in savory soy-sesame sauce.</p>
-      </div>
+        <p>Shrimp stir-fried with noodles and vegetables in savory sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>House Special Chowmein</h3>
           <span class="price">$12</span>
         </div>
-        <p>Signature mixed-style chowmein with noodles, vegetables, and scallions in a sesame-soy chili sauce.</p>
-      </div>
+        <p>Signature mixed-style chowmein in sesame-soy chili sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Paneer Chilli</h3>
           <span class="price">$12</span>
         </div>
-        <p>Cottage cheese cubes tossed with onions and bell peppers in a bold chili-garlic sauce.</p>
-      </div>
+        <p>Cottage cheese with onions and bell peppers in chili-garlic sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Aloo Tikki</h3>
           <span class="price">$12</span>
         </div>
-        <p>Pan-fried potato patties spiced with green peas, roasted chickpea flour, and tangy chaat masala.</p>
-      </div>
+        <p>Pan-fried potato patties with green peas and chaat masala</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Pakora</h3>
           <span class="price">$9</span>
         </div>
-        <p>Crispy chicken strips dipped in chickpea batter and fried with garlic, ginger, and house spices.</p>
-      </div>
+        <p>Crispy chicken strips in chickpea batter with house spices</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken 65</h3>
           <span class="price">$9</span>
         </div>
-        <p>Tender chicken bites stir-fried with mustard seeds, curry leaves, garlic, and spicy chili sauce.</p>
-      </div>
+        <p>Tender chicken bites with curry leaves and spicy chili sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
-          <h3>Indian Tandoori Wings (Smoked)</h3>
+          <h3>Tandoori Wings (Smoked)</h3>
           <span class="price">$10</span>
         </div>
-        <p>Tandoori-marinated chicken wings char-grilled and tossed in a smoky vindaloo-buffalo glaze.</p>
-      </div>
+        <p>Char-grilled wings in smoky vindaloo-buffalo glaze</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Kashmiri Tikki</h3>
           <span class="price">$9</span>
         </div>
-        <p>Minced chicken thigh marinated in Kashmiri chili, garlic, ginger, and mustard oil, grilled in the tandoor.</p>
-      </div>
+        <p>Minced chicken with Kashmiri chili, grilled in tandoor</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Vegetable Platter</h3>
           <span class="price">$15</span>
         </div>
-        <p>Sampler platter featuring samosa, pakora, aloo tikki, gobi pakora, Kashmiri tikka, and chicken pakora.</p>
-      </div>
+        <p>Sampler with samosa, pakora, aloo tikki, and more</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Momo (Steamed/Fried)</h3>
           <span class="price">$13</span>
         </div>
-        <p>Steamed or fried chicken momos filled with herbs and spices, served with spicy tomato-sesame chutney.</p>
-      </div>
+        <p>Chicken dumplings with spicy tomato-sesame chutney</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Vegetable Momo (Steamed/Fried)</h3>
           <span class="price">$12</span>
         </div>
-        <p>Steamed or fried vegetable momos stuffed with seasoned veggies, served with tomato-sesame peanut chutney.</p>
-      </div>
+        <p>Vegetable dumplings with tomato-sesame peanut chutney</p>
+      </article>
     </div>
   </section>
 
-  <!-- Soups -->
-  <section class="menu-category">
-    <h2 class="category-title">Soups</h2>
+  <!-- Soups Tab -->
+  <section id="soups" class="tab-content">
     <div class="menu-grid">
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
-          <h3>Mulligatawny Soup (Daal Soup)</h3>
+          <h3>Mulligatawny Soup (Daal)</h3>
           <span class="price">$6</span>
         </div>
-        <p>Hearty lentil-based soup with aromatic spices, vegetables, and a touch of lemon.</p>
-      </div>
+        <p>Hearty lentil soup with aromatic spices and vegetables</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Coconut Tomato Soup</h3>
           <span class="price">$7</span>
         </div>
-        <p>Creamy coconut and tomato soup with ginger, garlic, and southern Indian spices.</p>
-      </div>
+        <p>Creamy coconut and tomato with southern Indian spices</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
-          <h3>Chicken Noodles Soup (Indo-Chinese)</h3>
+          <h3>Chicken Noodles Soup</h3>
           <span class="price">$8</span>
         </div>
-        <p>Savory chicken broth with noodles, vegetables, and Indo-Chinese seasoning.</p>
-      </div>
+        <p>Indo-Chinese style chicken broth with noodles and vegetables</p>
+      </article>
     </div>
   </section>
 
-  <!-- Salads -->
-  <section class="menu-category">
-    <h2 class="category-title">Salads</h2>
+  <!-- Salads Tab -->
+  <section id="salads" class="tab-content">
     <div class="menu-grid">
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Fresh Veg Salad</h3>
           <span class="price">$7</span>
         </div>
-        <p>Mixed greens, cherry tomatoes, cucumbers, red onions, shredded carrots, and lemon vinaigrette.</p>
-      </div>
+        <p>Mixed greens, tomatoes, cucumbers, onions with lemon vinaigrette</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Fresh Chicken Salad</h3>
           <span class="price">$8</span>
         </div>
-        <p>Mixed greens, grilled chicken, cherry tomatoes, cucumbers, onions, and lemon vinaigrette.</p>
-      </div>
+        <p>Mixed greens with grilled chicken and lemon vinaigrette</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Fresh Shrimp Salad</h3>
           <span class="price">$9</span>
         </div>
-        <p>Mixed greens, marinated grilled shrimp, cherry tomatoes, cucumbers, and citrus dressing.</p>
-      </div>
+        <p>Mixed greens with marinated grilled shrimp and citrus dressing</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Fresh Paneer Salad</h3>
           <span class="price">$8</span>
         </div>
-        <p>Mixed greens with grilled paneer, cucumbers, tomatoes, and a tangy tamarind dressing.</p>
-      </div>
+        <p>Mixed greens with grilled paneer and tangy tamarind dressing</p>
+      </article>
     </div>
   </section>
 
-  <!-- Chicken -->
-  <section class="menu-category">
-    <h2 class="category-title">Chicken Specialties</h2>
+  <!-- Chicken Tab -->
+  <section id="chicken" class="tab-content">
     <div class="menu-grid">
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Tikka Masala</h3>
           <span class="price">$17</span>
         </div>
-        <p>Tender boneless chicken cooked in a creamy tomato-fenugreek sauce with butter and mild spices—a globally loved classic.</p>
-      </div>
+        <p>Tender chicken in creamy tomato-fenugreek sauce</p>
+      </article>
       
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Curry</h3>
-          <span class="price">$16</span>
-        </div>
-        <p>Boneless chicken simmered in a tomato-onion curry with turmeric, cumin, coriander, and traditional North Indian spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Saag</h3>
-          <span class="price">$17</span>
-        </div>
-        <p>Chicken cooked with finely chopped spinach, garlic, onion, and spices, finished with a hint of cream for earthy richness.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Vindaloo</h3>
-          <span class="price">$17</span>
-        </div>
-        <p>Goan-style spicy curry with chicken, vinegar, garlic, and red chilies—finished with potatoes for a hearty, tangy bite.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Korma</h3>
-          <span class="price">$17</span>
-        </div>
-        <p>Boneless chicken in a smooth Mughlai-style cashew-cream curry, infused with ginger, garlic, and warming spices.</p>
-      </div>
-      
-      <div class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Kadai</h3>
-          <span class="price">$17</span>
-        </div>
-        <p>Chicken sautéed in a traditional kadhai with onions, peppers, tomatoes, and a signature blend of ground masalas.</p>
-      </div>
-      
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Butter Chicken</h3>
           <span class="price">$18</span>
         </div>
-        <p>Tandoor-roasted chicken simmered in a rich, buttery tomato cream sauce with subtle sweetness and warming spices.</p>
-      </div>
+        <p>Tandoor-roasted chicken in rich, buttery tomato cream sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Curry</h3>
+          <span class="price">$16</span>
+        </div>
+        <p>Traditional tomato-onion curry with North Indian spices</p>
+      </article>
+      
+      <article class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Saag</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Chicken with spinach, garlic, and cream for earthy richness</p>
+      </article>
+      
+      <article class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Vindaloo</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Spicy Goan-style curry with vinegar, garlic, and potatoes</p>
+      </article>
+      
+      <article class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Korma</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Mughlai-style cashew-cream curry with warming spices</p>
+      </article>
+      
+      <article class="menu-item">
+        <div class="menu-item-header">
+          <h3>Chicken Kadai</h3>
+          <span class="price">$17</span>
+        </div>
+        <p>Sautéed with onions, peppers, and signature masala blend</p>
+      </article>
+      
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Coconut Chicken Curry</h3>
           <span class="price">$17</span>
         </div>
-        <p>Chicken cooked in creamy coconut milk with mustard seeds, curry leaves, and a delicate balance of mild southern spices.</p>
-      </div>
+        <p>Creamy coconut milk with mild southern spices</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Mango Curry</h3>
           <span class="price">$17</span>
         </div>
-        <p>A tropical mango-based chicken curry with warming cloves and chili flakes for a sweet-spicy depth of flavor.</p>
-      </div>
+        <p>Tropical mango-based curry with sweet-spicy depth</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Jalfrezi</h3>
           <span class="price">$17</span>
         </div>
-        <p>Stir-fried chicken with onions, peppers, and cauliflower in a tangy tomato-chili glaze—sweet, spicy, and vibrant.</p>
-      </div>
+        <p>Stir-fried with peppers in tangy tomato-chili glaze</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Tandoori Chicken (Half)</h3>
           <span class="price">$17</span>
         </div>
-        <p>Half chicken marinated in yogurt, Kashmiri chili, ginger, and mustard oil, tandoor-roasted and served with naan or rice and makhani sauce.</p>
-      </div>
+        <p>Yogurt-marinated, tandoor-roasted with makhani sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Tandoori Chicken (Full)</h3>
           <span class="price">$27</span>
         </div>
-        <p>Full chicken marinated in yogurt, Kashmiri chili, ginger, and mustard oil, tandoor-roasted and served with naan or rice and makhani sauce.</p>
-      </div>
+        <p>Full chicken, yogurt-marinated, tandoor-roasted</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Tikka</h3>
           <span class="price">$17</span>
         </div>
-        <p>Juicy chicken thighs marinated in sour cream, black pepper, and lemon juice, grilled and served with naan or rice and makhani sauce.</p>
-      </div>
+        <p>Juicy thighs marinated and grilled, served with makhani sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Chicken Biryani</h3>
           <span class="price">$18</span>
         </div>
-        <p>Long-grain basmati rice layered with chicken, saffron, biryani spices, mint, yogurt, nuts, and fried onions; served with raita.</p>
-      </div>
+        <p>Basmati rice layered with chicken, saffron, and spices</p>
+      </article>
     </div>
   </section>
 
-  <!-- Lamb -->
-  <section class="menu-category">
-    <h2 class="category-title">Lamb Specialties</h2>
+  <!-- Lamb Tab -->
+  <section id="lamb" class="tab-content">
     <div class="menu-grid">
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Tikka Masala</h3>
           <span class="price">$19</span>
         </div>
-        <p>Boneless lamb cooked in a creamy tomato sauce with butter, cream, and fenugreek for a mildly spiced, smoky flavor.</p>
-      </div>
+        <p>Boneless lamb in creamy tomato sauce with fenugreek</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Curry</h3>
           <span class="price">$18</span>
         </div>
-        <p>Tender lamb simmered in a tomato-onion gravy with cumin, coriander, turmeric, and warming Indian spices.</p>
-      </div>
+        <p>Tender lamb in tomato-onion gravy with warming spices</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Saag</h3>
           <span class="price">$19</span>
         </div>
-        <p>Lamb cooked with finely chopped spinach, onions, garlic, and spices, finished with cream for an earthy, wholesome curry.</p>
-      </div>
+        <p>Lamb with spinach, onions, garlic, finished with cream</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Vindaloo</h3>
           <span class="price">$19</span>
         </div>
-        <p>Spicy Goan-style lamb curry with red chili, garlic, vinegar, and potatoes for a bold, tangy, and fiery flavor profile.</p>
-      </div>
+        <p>Spicy Goan-style with red chili, vinegar, and potatoes</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Korma</h3>
           <span class="price">$19</span>
         </div>
-        <p>Lamb cooked in a rich Mughlai-style cashew cream sauce with garlic, onion, ginger, and a touch of dry fenugreek.</p>
-      </div>
+        <p>Rich Mughlai cashew cream sauce with aromatic spices</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Kadai</h3>
           <span class="price">$19</span>
         </div>
-        <p>Lamb sautéed with peppers, tomatoes, and onions in a traditional kadhai masala blend for bold and aromatic flavor.</p>
-      </div>
+        <p>Sautéed with peppers in traditional kadhai masala</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Rogan Josh</h3>
           <span class="price">$19</span>
         </div>
-        <p>Kashmiri-style lamb curry in a yogurt base, simmered with onions, fennel, cardamom, and warm spices for a rich, red finish.</p>
-      </div>
+        <p>Kashmiri-style in yogurt base with cardamom and spices</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Seekh Kebab</h3>
           <span class="price">$19</span>
         </div>
-        <p>Spiced ground lamb skewers blended with coriander, garlic, and garam masala, grilled in the tandoor until juicy and aromatic.</p>
-      </div>
+        <p>Spiced ground lamb skewers grilled in tandoor</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Tikka</h3>
           <span class="price">$17</span>
         </div>
-        <p>Tender lamb leg marinated in yogurt and spices, char-grilled and served with makhani sauce and your choice of naan or rice.</p>
-      </div>
+        <p>Marinated lamb leg, char-grilled with makhani sauce</p>
+      </article>
       
-      <div class="menu-item">
+      <article class="menu-item">
         <div class="menu-item-header">
           <h3>Lamb Biryani</h3>
           <span class="price">$19</span>
         </div>
-        <p>Basmati rice layered with spiced lamb, saffron, yogurt, mint, nuts, and fried onions, serve
+        <p>Basmati rice layered with spiced lamb and saffron</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Goat Tab -->
+  <section id="goat" class="tab-content">
+    <div class="menu-grid">
+      <article class="menu-item">
+        <div class="menu-item-header">
+          <h3>Goat Curry</h3>
+          <span class="price">$19</span>
+        </div>
+        <p>Goat in tomato-onion curry with turmeric and coriander</p>
+      </article>
+      
+      <article
