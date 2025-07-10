@@ -185,7 +185,7 @@
       padding: 40px 20px;
     }
     
-    /* Tab Navigation */
+    /* Tab Navigation - Enhanced for better visibility */
     .tab-nav {
       display: flex;
       justify-content: center;
@@ -196,6 +196,9 @@
       border-radius: 15px;
       padding: 10px;
       box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 80px;
+      z-index: 999;
     }
     
     .tab-btn {
@@ -1532,17 +1535,24 @@ function scrollToSection(sectionName) {
   // Add active class to clicked button
   event.target.classList.add('active');
   
-  // Smooth scroll to the selected section
+  // Smooth scroll to the selected section with proper offset
   const targetSection = document.getElementById(sectionName);
   if (targetSection) {
-    targetSection.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
+    const headerHeight = 80; // Main nav height
+    const tabNavHeight = 80; // Tab nav height
+    const offset = headerHeight + tabNavHeight + 20; // Extra padding
+    
+    const elementPosition = targetSection.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
     });
   }
 }
 
-// Intersection Observer to highlight active tab while scrolling
+// Enhanced Intersection Observer for better tab highlighting
 document.addEventListener('DOMContentLoaded', function() {
   const sections = document.querySelectorAll('.tab-content');
   const tabButtons = document.querySelectorAll('.tab-btn');
@@ -1562,8 +1572,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }, {
-    threshold: 0.3,
-    rootMargin: '-20% 0px -60% 0px'
+    threshold: 0.2,
+    rootMargin: '-140px 0px -60% 0px'
   });
   
   // Observe all sections
@@ -1579,6 +1589,12 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.addEventListener('click', function() {
       navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
     });
+  }
+  
+  // Ensure first tab is active on page load
+  const firstTab = document.querySelector('.tab-btn');
+  if (firstTab) {
+    firstTab.classList.add('active');
   }
 });
 </script>
