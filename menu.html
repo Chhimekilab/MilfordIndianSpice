@@ -288,15 +288,60 @@
     .menu-item {
       background: white;
       border-radius: 12px;
-      padding: 20px;
+      overflow: hidden;
       box-shadow: 0 3px 15px rgba(0,0,0,0.08);
       transition: all 0.3s ease;
       border-left: 3px solid var(--accent);
+      display: flex;
+      flex-direction: column;
     }
     
     .menu-item:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    
+    /* Menu Item Image Styles */
+    .menu-item-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+      display: block;
+    }
+    
+    .menu-item:hover .menu-item-image {
+      transform: scale(1.05);
+    }
+    
+    .menu-item-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Menu item without image - full width content */
+    .menu-item.no-image {
+      padding: 20px;
+    }
+    
+    .menu-item.no-image .menu-item-content {
+      padding: 0;
+    }
+    
+    /* Image placeholder when no image is available */
+    .menu-item-image-placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, var(--accent), #d19b3d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 3rem;
+      opacity: 0.8;
     }
     
     .menu-item-header {
@@ -372,6 +417,9 @@
       .menu-item-header { flex-direction: column; align-items: flex-start; }
       .price { margin-left: 0; margin-top: 5px; }
       .legend-grid { grid-template-columns: 1fr; }
+      .menu-item-image, .menu-item-image-placeholder {
+        height: 150px;
+      }
     }
   </style>
 </head>
@@ -459,48 +507,68 @@
     </div>
     <div class="menu-grid">
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Vegetable Samosa</h3>
-          <span class="price">$7</span>
+        <img src="menu-images/samosa.svg" alt="Golden crispy vegetable samosa" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🥟</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Vegetable Samosa</h3>
+            <span class="price">$7</span>
+          </div>
+          <div class="dietary-symbols">🌱 🌾 ❄️</div>
+          <p>Crispy pastry shells filled with spiced mashed potatoes and green peas, served with tangy tamarind chutney.</p>
         </div>
-        <div class="dietary-symbols">🌱 🌾 ❄️</div>
-        <p>Crispy pastry shells filled with spiced mashed potatoes and green peas, served with tangy tamarind chutney.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Vegetable Pakora</h3>
-          <span class="price">$7</span>
+        <img src="menu-images/veg-pakora.jpg" alt="Crispy vegetable pakora fritters" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🥬</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Vegetable Pakora</h3>
+            <span class="price">$7</span>
+          </div>
+          <p>Crisp fritters made from assorted vegetables dipped in spiced gram flour batter and deep-fried to golden perfection.</p>
         </div>
-        <p>Crisp fritters made from assorted vegetables dipped in spiced gram flour batter and deep-fried to golden perfection.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Gobi Pakora</h3>
-          <span class="price">$7</span>
+        <img src="menu-images/gobi-pakora.jpg" alt="Golden cauliflower pakora" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🥦</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Gobi Pakora</h3>
+            <span class="price">$7</span>
+          </div>
+          <div class="dietary-symbols">🌿 🌱</div>
+          <p>Cauliflower florets dipped in a seasoned chickpea flour batter and deep-fried until golden and crispy, delivering a warm, crunchy bite in every piece.</p>
         </div>
-        <div class="dietary-symbols">🌿 🌱</div>
-        <p>Cauliflower florets dipped in a seasoned chickpea flour batter and deep-fried until golden and crispy, delivering a warm, crunchy bite in every piece.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Pakora</h3>
-          <span class="price">$9</span>
+        <img src="menu-images/chicken-pakora.jpg" alt="Spicy chicken pakora" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🐔</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Chicken Pakora</h3>
+            <span class="price">$9</span>
+          </div>
+          <div class="dietary-symbols">🌶️</div>
+          <p>Crispy chicken strips dipped in chickpea batter and fried with garlic, ginger, and house spices.</p>
         </div>
-        <div class="dietary-symbols">🌶️</div>
-        <p>Crispy chicken strips dipped in chickpea batter and fried with garlic, ginger, and house spices.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Vegetable Platter</h3>
-          <span class="price">$15</span>
-        </div>
-        <div class="dietary-symbols">🌱 🌾 ❄️</div>
-        <p>Sampler platter featuring samosa, pakora, aloo tikki, gobi pakora.</p>
-      </article>
+        <img src="menu-images/veg-platter.jpg" alt="Assorted vegetable platter" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🍽️</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Vegetable Platter</h3>
+            <span class="price">$15</span>
+          </div>
+                   <div class="dietary-symbols">🌱 🌾 ❄️</div>
+           <p>Sampler platter featuring samosa, pakora, aloo tikki, gobi pakora.</p>
+         </div>
+       </article>
       
       <article class="menu-item">
         <div class="menu-item-header">
@@ -997,47 +1065,67 @@
     </div>
     <div class="menu-grid">
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Tikka Masala</h3>
-          <span class="price">$17</span>
+        <img src="menu-images/chicken-tikka-masala.jpg" alt="Creamy chicken tikka masala" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🍛</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Chicken Tikka Masala</h3>
+            <span class="price">$17</span>
+          </div>
+          <div class="dietary-symbols">🥛</div>
+          <p>Boneless chicken cooked in a creamy tomato-fenugreek sauce with butter and mild spices—a globally loved classic.</p>
         </div>
-        <div class="dietary-symbols">🥛</div>
-        <p>Boneless chicken cooked in a creamy tomato-fenugreek sauce with butter and mild spices—a globally loved classic.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Curry</h3>
-          <span class="price">$16</span>
+        <img src="menu-images/chicken-curry.jpg" alt="Traditional chicken curry" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🍛</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Chicken Curry</h3>
+            <span class="price">$16</span>
+          </div>
+          <p>Boneless chicken simmered in a creamy tomato sauce with turmeric, cumin, coriander, and traditional North Indian spices.</p>
         </div>
-        <p>Boneless chicken simmered in a creamy tomato sauce with turmeric, cumin, coriander, and traditional North Indian spices.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Saag</h3>
-          <span class="price">$17</span>
+        <img src="menu-images/chicken-saag.jpg" alt="Chicken saag with spinach" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🥬</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Chicken Saag</h3>
+            <span class="price">$17</span>
+          </div>
+          <div class="dietary-symbols">🥛</div>
+          <p>Chicken cooked with finely chopped spinach, garlic, onion, and spices, finished with a hint of cream for earthy richness.</p>
         </div>
-        <div class="dietary-symbols">🥛</div>
-        <p>Chicken cooked with finely chopped spinach, garlic, onion, and spices, finished with a hint of cream for earthy richness.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Vindaloo</h3>
-          <span class="price">$17</span>
+        <img src="menu-images/chicken-vindaloo.jpg" alt="Spicy chicken vindaloo" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🌶️</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Chicken Vindaloo</h3>
+            <span class="price">$17</span>
+          </div>
+          <div class="dietary-symbols">🌶️ 🔥</div>
+          <p>Goan-style spicy curry with chicken, vinegar, garlic, and red chilies—finished with potatoes for a hearty, tangy bite.</p>
         </div>
-        <div class="dietary-symbols">🌶️ 🔥</div>
-        <p>Goan-style spicy curry with chicken, vinegar, garlic, and red chilies—finished with potatoes for a hearty, tangy bite.</p>
       </article>
       
       <article class="menu-item">
-        <div class="menu-item-header">
-          <h3>Chicken Korma</h3>
-          <span class="price">$17</span>
+        <img src="menu-images/chicken-korma.jpg" alt="Rich chicken korma" class="menu-item-image" onerror="this.style.display='none'; this.parentElement.querySelector('.menu-item-image-placeholder').style.display='flex';">
+        <div class="menu-item-image-placeholder" style="display: none;">🥥</div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Chicken Korma</h3>
+            <span class="price">$17</span>
+          </div>
+          <div class="dietary-symbols">🥛 🥜</div>
+          <p>Boneless chicken in a smooth nuts & cashew-cream, infused with ginger, garlic, and warming spices.</p>
         </div>
-        <div class="dietary-symbols">🥛 🥜</div>
-        <p>Boneless chicken in a smooth nuts & cashew-cream, infused with ginger, garlic, and warming spices.</p>
       </article>
       
       <article class="menu-item">
@@ -1597,7 +1685,56 @@ document.addEventListener('DOMContentLoaded', function() {
     firstTab.classList.add('active');
   }
 });
-</script>
-
-</body>
-</html>
+  </script>
+  
+  <script>
+    // Enhanced menu image handling
+    document.addEventListener('DOMContentLoaded', function() {
+      // Handle image loading with better fallback
+      const menuItems = document.querySelectorAll('.menu-item');
+      
+      menuItems.forEach(item => {
+        const img = item.querySelector('.menu-item-image');
+        const placeholder = item.querySelector('.menu-item-image-placeholder');
+        
+        if (img && placeholder) {
+          // Check if image loads successfully
+          img.addEventListener('load', function() {
+            placeholder.style.display = 'none';
+            img.style.display = 'block';
+          });
+          
+          // Handle image load errors
+          img.addEventListener('error', function() {
+            img.style.display = 'none';
+            placeholder.style.display = 'flex';
+            // Add a class to adjust the item layout when no image is available
+            item.classList.add('no-image');
+          });
+          
+          // Set a timeout to show placeholder if image takes too long to load
+          setTimeout(() => {
+            if (!img.complete) {
+              img.style.display = 'none';
+              placeholder.style.display = 'flex';
+              item.classList.add('no-image');
+            }
+          }, 3000);
+        }
+      });
+      
+      // Optional: Add loading animation
+      const images = document.querySelectorAll('.menu-item-image');
+      images.forEach(img => {
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+        
+        img.addEventListener('load', function() {
+          this.style.opacity = '1';
+        });
+      });
+    });
+  </script>
+  
+  </body>
+  </html>
