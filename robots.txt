@@ -1,0 +1,62 @@
+# Robots.txt for Milford India Spice
+# https://milfordiindiaspice.com/robots.txt
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /menu.html
+Allow: /menu-images/
+Allow: /sitemap.xml
+
+# Disallow any potential admin or private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+Disallow: /README.md
+
+# Allow images and resources
+Allow: *.css
+Allow: *.js
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.ico
+
+# Crawl-delay (optional, only if needed)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://milfordiindiaspice.com/sitemap.xml
+
+# Specific instructions for Google
+User-agent: Googlebot
+Allow: /
+Allow: /menu-images/
+
+# Specific instructions for Bing
+User-agent: Bingbot
+Allow: /
+Allow: /menu-images/
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Instructions for image crawlers
+User-agent: Googlebot-Image
+Allow: /menu-images/
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
