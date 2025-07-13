@@ -25,7 +25,7 @@
       "name": "Chicken Tikka Masala",
       "description": "Tender chicken in creamy tomato-based curry",
       "price": 16.99,
-      "category": "main-courses",
+      "category": "chicken",
       "image": null,
       "dietary": ["spicy"],
       "outOfStock": false
@@ -35,7 +35,7 @@
       "name": "Butter Chicken",
       "description": "Creamy and rich chicken curry with butter and cream",
       "price": 17.99,
-      "category": "main-courses",
+      "category": "chicken",
       "image": null,
       "dietary": [],
       "outOfStock": false
@@ -65,9 +65,69 @@
       "name": "Mango Lassi",
       "description": "Refreshing yogurt-based mango drink",
       "price": 3.99,
-      "category": "beverages",
+      "category": "sides",
       "image": null,
       "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "8",
+      "name": "Palak Paneer",
+      "description": "Fresh cottage cheese in creamy spinach curry",
+      "price": 15.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "9",
+      "name": "Lamb Curry",
+      "description": "Tender lamb pieces in aromatic spices",
+      "price": 19.99,
+      "category": "lamb",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "10",
+      "name": "Fish Curry",
+      "description": "Fresh fish in coconut curry sauce",
+      "price": 18.99,
+      "category": "seafood",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "11",
+      "name": "Goat Curry",
+      "description": "Tender goat meat in traditional spices",
+      "price": 20.99,
+      "category": "goat",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "12",
+      "name": "Tomato Soup",
+      "description": "Classic tomato soup with Indian spices",
+      "price": 6.99,
+      "category": "soups",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "13",
+      "name": "Mixed Salad",
+      "description": "Fresh vegetables with house dressing",
+      "price": 7.99,
+      "category": "salads",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
       "outOfStock": false
     }
   ],

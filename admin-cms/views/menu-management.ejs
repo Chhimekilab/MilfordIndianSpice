@@ -39,6 +39,43 @@
             padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
         }
+        .out-of-stock {
+            opacity: 0.6;
+            position: relative;
+        }
+        .out-of-stock::after {
+            content: "OUT OF STOCK";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8em;
+        }
+        .out-of-stock-badge {
+            background: #dc3545;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.7em;
+            font-weight: bold;
+        }
+        .no-items {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px;
+        }
+        .btn-group.flex-wrap {
+            flex-wrap: wrap;
+        }
+        .btn-group.flex-wrap .btn {
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -58,13 +95,19 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h5 class="card-title">Filter by Category</h5>
-                        <div class="btn-group" role="group">
+                        <div class="btn-group flex-wrap" role="group">
                             <button type="button" class="btn btn-outline-primary active" data-category="all">All</button>
-                            <button type="button" class="btn btn-outline-primary" data-category="appetizers">Appetizers</button>
-                            <button type="button" class="btn btn-outline-primary" data-category="main-courses">Main Courses</button>
-                            <button type="button" class="btn btn-outline-primary" data-category="breads">Breads</button>
-                            <button type="button" class="btn btn-outline-primary" data-category="desserts">Desserts</button>
-                            <button type="button" class="btn btn-outline-primary" data-category="beverages">Beverages</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="appetizers">🥟 Appetizers</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="soups">🍲 Soups</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="salads">🥗 Salads</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="breads">🫓 Breads</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="vegetarian">🌱 Vegetarian</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="chicken">🐔 Chicken</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="goat">🐐 Goat</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="lamb">🐑 Lamb</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="seafood">🦐 Seafood</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="desserts">🍮 Desserts</button>
+                            <button type="button" class="btn btn-outline-primary" data-category="sides">🍚 Sides</button>
                         </div>
                     </div>
                 </div>
@@ -105,11 +148,17 @@
                                     <label for="itemCategory" class="form-label">Category *</label>
                                     <select class="form-control" id="itemCategory" name="category" required>
                                         <option value="">Select Category</option>
-                                        <option value="appetizers">Appetizers</option>
-                                        <option value="main-courses">Main Courses</option>
-                                        <option value="breads">Breads</option>
-                                        <option value="desserts">Desserts</option>
-                                        <option value="beverages">Beverages</option>
+                                        <option value="appetizers">🥟 Appetizers</option>
+                                        <option value="soups">🍲 Soups</option>
+                                        <option value="salads">🥗 Salads</option>
+                                        <option value="breads">🫓 Breads</option>
+                                        <option value="vegetarian">🌱 Vegetarian</option>
+                                        <option value="chicken">🐔 Chicken</option>
+                                        <option value="goat">🐐 Goat</option>
+                                        <option value="lamb">🐑 Lamb</option>
+                                        <option value="seafood">🦐 Seafood</option>
+                                        <option value="desserts">🍮 Desserts</option>
+                                        <option value="sides">🍚 Sides</option>
                                     </select>
                                 </div>
                             </div>
@@ -186,11 +235,17 @@
                                     <label for="editItemCategory" class="form-label">Category *</label>
                                     <select class="form-control" id="editItemCategory" name="category" required>
                                         <option value="">Select Category</option>
-                                        <option value="appetizers">Appetizers</option>
-                                        <option value="main-courses">Main Courses</option>
-                                        <option value="breads">Breads</option>
-                                        <option value="desserts">Desserts</option>
-                                        <option value="beverages">Beverages</option>
+                                        <option value="appetizers">🥟 Appetizers</option>
+                                        <option value="soups">🍲 Soups</option>
+                                        <option value="salads">🥗 Salads</option>
+                                        <option value="breads">🫓 Breads</option>
+                                        <option value="vegetarian">🌱 Vegetarian</option>
+                                        <option value="chicken">🐔 Chicken</option>
+                                        <option value="goat">🐐 Goat</option>
+                                        <option value="lamb">🐑 Lamb</option>
+                                        <option value="seafood">🦐 Seafood</option>
+                                        <option value="desserts">🍮 Desserts</option>
+                                        <option value="sides">🍚 Sides</option>
                                     </select>
                                 </div>
                             </div>

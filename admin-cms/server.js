@@ -214,9 +214,99 @@ async function regenerateMenuHtml(menuData) {
   try {
     const menuTemplate = await fs.readFile(path.join(__dirname, '../menu.html'), 'utf8');
     
-    // This is a simplified version - in a real implementation, you'd want to use a proper template engine
-    // For now, we'll just update the menu data and let the existing menu.html handle the display
-    console.log('Menu data updated, menu.html regeneration would happen here');
+    // Generate HTML for each category
+    const categories = [
+      { id: 'appetizers', name: '🥟 Appetizers', subtitle: 'Start your journey with our flavorful appetizers and street food favorites' },
+      { id: 'soups', name: '🍲 Soups', subtitle: 'Warm, comforting soups made fresh daily' },
+      { id: 'salads', name: '🥗 Salads', subtitle: 'Fresh, crisp salads with vibrant flavors' },
+      { id: 'breads', name: '🫓 Fresh Baked Breads', subtitle: 'Freshly baked breads from our tandoor oven' },
+      { id: 'vegetarian', name: '🌱 Vegetarian Dishes', subtitle: 'Authentic vegetarian and vegan options prepared with fresh ingredients' },
+      { id: 'chicken', name: '🐔 Chicken Specialties', subtitle: 'Tender chicken dishes in rich curries, tandoori preparations, and aromatic biryanis' },
+      { id: 'goat', name: '🐐 Goat Specialties', subtitle: 'Traditional goat dishes with authentic spices' },
+      { id: 'lamb', name: '🐑 Lamb Specialties', subtitle: 'Tender lamb prepared in traditional style' },
+      { id: 'seafood', name: '🦐 Seafood Specialties', subtitle: 'Fresh seafood cooked in aromatic curries, tandoori style, and coastal preparations' },
+      { id: 'desserts', name: '🍮 Traditional Desserts', subtitle: 'Traditional Indian desserts to perfectly finish your meal' },
+      { id: 'sides', name: '🍚 Sides & Accompaniments', subtitle: 'Perfect sides, rice, chutneys, and pickles to enhance your dining experience' }
+    ];
+    
+    function generateMenuItemHtml(item) {
+      const dietarySymbols = {
+        'vegetarian': '🌱',
+        'vegan': '🌿',
+        'gluten-free': '🌾',
+        'spicy': '🌶️'
+      };
+      
+      const dietaryHtml = item.dietary && item.dietary.length > 0 
+        ? `<div class="dietary-symbols">${item.dietary.map(d => dietarySymbols[d] || '').join(' ')}</div>` 
+        : '';
+      
+      const imageHtml = item.image 
+        ? `<img src="${item.image}" alt="${item.name}" class="menu-item-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">`
+        : `<img src="menu-images/placeholder.png" alt="Placeholder" class="menu-item-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">`;
+      
+      const outOfStockClass = item.outOfStock ? ' out-of-stock' : '';
+      const outOfStockText = item.outOfStock ? '<span class="out-of-stock-badge">Out of Stock</span>' : '';
+      
+      return `
+        <article class="menu-item${outOfStockClass}">
+          ${imageHtml}
+          <img src="menu-images/placeholder.png" alt="Placeholder" class="menu-item-image-placeholder" style="display: none;">
+          <div class="menu-item-content">
+            <div class="menu-item-header">
+              <h3>${item.name}</h3>
+              <span class="price">$${item.price}</span>
+            </div>
+            ${dietaryHtml}
+            <p>${item.description}</p>
+            ${outOfStockText}
+          </div>
+        </article>
+      `;
+    }
+    
+    function generateSectionHtml(category) {
+      const categoryItems = menuData.menu.filter(item => item.category === category.id);
+      const isActive = category.id === 'appetizers' ? ' active' : '';
+      
+      const itemsHtml = categoryItems.length > 0 
+        ? categoryItems.map(generateMenuItemHtml).join('')
+        : '<p class="no-items">No items available in this category.</p>';
+      
+      return `
+        <section id="${category.id}" class="tab-content${isActive}">
+          <div class="section-header">
+            <h2 class="section-title">${category.name}</h2>
+            <p class="section-subtitle">${category.subtitle}</p>
+          </div>
+          <div class="menu-grid">
+            ${itemsHtml}
+          </div>
+        </section>
+      `;
+    }
+    
+    // Generate all sections
+    const allSectionsHtml = categories.map(generateSectionHtml).join('\n');
+    
+    // Replace the content between the menu sections
+    const startMarker = '<!-- Appetizers Section -->';
+    const endMarker = '</main>';
+    
+    const startIndex = menuTemplate.indexOf(startMarker);
+    const endIndex = menuTemplate.indexOf(endMarker);
+    
+    if (startIndex !== -1 && endIndex !== -1) {
+      const beforeSections = menuTemplate.substring(0, startIndex);
+      const afterSections = menuTemplate.substring(endIndex);
+      
+      const newMenuHtml = beforeSections + allSectionsHtml + '\n\n' + afterSections;
+      
+      await fs.writeFile(path.join(__dirname, '../menu.html'), newMenuHtml);
+      console.log('Menu HTML regenerated successfully');
+    } else {
+      console.error('Could not find menu section markers in template');
+    }
   } catch (error) {
     console.error('Error regenerating menu.html:', error);
   }
