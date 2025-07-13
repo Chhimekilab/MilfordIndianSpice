@@ -3,8 +3,8 @@
     {
       "id": "1",
       "name": "Vegetable Samosa",
-      "description": "Crispy pastry filled with spiced potatoes and peas",
-      "price": 4.99,
+      "description": "Crispy pastry shells filled with spiced mashed potatoes and green peas, served with tangy tamarind chutney",
+      "price": 7.00,
       "category": "appetizers",
       "image": "/menu-images/vegetable-samosa.jpg",
       "dietary": ["vegetarian"],
@@ -13,8 +13,8 @@
     {
       "id": "2",
       "name": "Gobi Pakora",
-      "description": "Crispy cauliflower fritters with aromatic spices",
-      "price": 4.49,
+      "description": "Cauliflower florets dipped in a seasoned chickpea flour batter and deep-fried until golden and crispy",
+      "price": 7.00,
       "category": "appetizers",
       "image": null,
       "dietary": ["vegetarian", "gluten-free"],
@@ -22,18 +22,238 @@
     },
     {
       "id": "3",
-      "name": "Chicken Tikka Masala",
-      "description": "Tender chicken in creamy tomato-based curry",
+      "name": "Vegetable Pakora",
+      "description": "Crisp fritters made from assorted vegetables dipped in spiced gram flour batter and deep-fried to golden perfection",
+      "price": 7.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "4",
+      "name": "Chicken Pakora",
+      "description": "Crispy chicken strips dipped in chickpea batter and fried with garlic, ginger, and house spices",
+      "price": 9.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "5",
+      "name": "Vegetable Platter",
+      "description": "Sampler platter featuring samosa, pakora, aloo tikki, and gobi pakora with chutneys",
+      "price": 15.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "6",
+      "name": "Chicken 65",
+      "description": "Spicy deep-fried chicken marinated in yogurt and spices with curry leaves",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "101",
+      "name": "Dal Soup",
+      "description": "Traditional lentil soup with turmeric, cumin, and aromatic spices",
+      "price": 6.00,
+      "category": "soups",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "102",
+      "name": "Tomato Soup",
+      "description": "Classic tomato soup with Indian spices and fresh herbs",
+      "price": 6.00,
+      "category": "soups",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "103",
+      "name": "Chicken Soup",
+      "description": "Hearty chicken soup with vegetables and aromatic spices",
+      "price": 8.00,
+      "category": "soups",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "201",
+      "name": "Garden Salad",
+      "description": "Fresh mixed greens with cucumber, tomatoes, onions, and house dressing",
+      "price": 7.00,
+      "category": "salads",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "202",
+      "name": "Kachumber Salad",
+      "description": "Traditional Indian salad with diced cucumber, tomatoes, onions, and lemon dressing",
+      "price": 6.00,
+      "category": "salads",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "301",
+      "name": "Naan Bread",
+      "description": "Soft and fluffy traditional Indian flatbread baked in tandoor",
+      "price": 3.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "302",
+      "name": "Garlic Naan",
+      "description": "Naan bread topped with fresh garlic and cilantro",
+      "price": 4.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "303",
+      "name": "Cheese Naan",
+      "description": "Naan stuffed with mozzarella cheese and herbs",
+      "price": 5.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "304",
+      "name": "Roti",
+      "description": "Whole wheat flatbread cooked on griddle",
+      "price": 2.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "305",
+      "name": "Paratha",
+      "description": "Layered whole wheat bread with ghee",
+      "price": 4.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "306",
+      "name": "Aloo Paratha",
+      "description": "Whole wheat bread stuffed with spiced mashed potatoes",
+      "price": 6.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "401",
+      "name": "Palak Paneer",
+      "description": "Fresh cottage cheese cubes in creamy spinach curry with aromatic spices",
+      "price": 15.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "402",
+      "name": "Paneer Tikka Masala",
+      "description": "Grilled cottage cheese in rich tomato-fenugreek gravy",
       "price": 16.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "403",
+      "name": "Dal Makhani",
+      "description": "Creamy black lentils slow-cooked with butter and cream",
+      "price": 14.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "404",
+      "name": "Chana Masala",
+      "description": "Chickpeas cooked in spiced tomato-onion gravy",
+      "price": 13.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "405",
+      "name": "Aloo Gobi",
+      "description": "Cauliflower and potatoes cooked with turmeric and spices",
+      "price": 13.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "406",
+      "name": "Malai Kofta",
+      "description": "Fried vegetable balls in creamy cashew curry",
+      "price": 15.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "407",
+      "name": "Baingan Bhartha",
+      "description": "Roasted eggplant mashed and cooked with onions and spices",
+      "price": 14.99,
+      "category": "vegetarian",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "501",
+      "name": "Chicken Tikka Masala",
+      "description": "Tender chicken tikka in creamy tomato-based curry with butter and mild spices",
+      "price": 17.99,
       "category": "chicken",
       "image": null,
       "dietary": ["spicy"],
       "outOfStock": false
     },
     {
-      "id": "4",
+      "id": "502",
       "name": "Butter Chicken",
-      "description": "Creamy and rich chicken curry with butter and cream",
+      "description": "Creamy and rich chicken curry with butter and cream in tomato sauce",
       "price": 17.99,
       "category": "chicken",
       "image": null,
@@ -41,19 +261,179 @@
       "outOfStock": false
     },
     {
-      "id": "5",
-      "name": "Naan Bread",
-      "description": "Soft and fluffy Indian flatbread",
-      "price": 2.99,
-      "category": "breads",
+      "id": "503",
+      "name": "Chicken Curry",
+      "description": "Boneless chicken simmered in traditional curry sauce with onions and tomatoes",
+      "price": 16.99,
+      "category": "chicken",
       "image": null,
-      "dietary": ["vegetarian"],
+      "dietary": [],
       "outOfStock": false
     },
     {
-      "id": "6",
+      "id": "504",
+      "name": "Chicken Saag",
+      "description": "Chicken cooked with finely chopped spinach, garlic, and spices",
+      "price": 17.99,
+      "category": "chicken",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "505",
+      "name": "Chicken Vindaloo",
+      "description": "Spicy Goan-style curry with chicken, vinegar, and red chilies",
+      "price": 17.99,
+      "category": "chicken",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "506",
+      "name": "Chicken Korma",
+      "description": "Mild chicken curry in creamy cashew and yogurt sauce",
+      "price": 17.99,
+      "category": "chicken",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "507",
+      "name": "Chicken Biryani",
+      "description": "Fragrant basmati rice layered with marinated chicken and aromatic spices",
+      "price": 19.99,
+      "category": "chicken",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "508",
+      "name": "Tandoori Chicken",
+      "description": "Marinated chicken cooked in tandoor oven with yogurt and spices",
+      "price": 18.99,
+      "category": "chicken",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "601",
+      "name": "Goat Curry",
+      "description": "Tender goat meat cooked in traditional spices with onions and tomatoes",
+      "price": 21.99,
+      "category": "goat",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "602",
+      "name": "Goat Biryani",
+      "description": "Fragrant basmati rice layered with spiced goat meat and saffron",
+      "price": 23.99,
+      "category": "goat",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "603",
+      "name": "Goat Vindaloo",
+      "description": "Spicy Goan-style goat curry with vinegar and red chilies",
+      "price": 22.99,
+      "category": "goat",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "701",
+      "name": "Lamb Curry",
+      "description": "Tender lamb pieces in aromatic curry sauce with traditional spices",
+      "price": 20.99,
+      "category": "lamb",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "702",
+      "name": "Lamb Saag",
+      "description": "Lamb cooked with fresh spinach and aromatic spices",
+      "price": 21.99,
+      "category": "lamb",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "703",
+      "name": "Lamb Vindaloo",
+      "description": "Spicy Goan-style lamb curry with vinegar and red chilies",
+      "price": 21.99,
+      "category": "lamb",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "704",
+      "name": "Lamb Biryani",
+      "description": "Fragrant basmati rice layered with marinated lamb and saffron",
+      "price": 22.99,
+      "category": "lamb",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "801",
+      "name": "Fish Curry",
+      "description": "Fresh fish cooked in coconut curry sauce with South Indian spices",
+      "price": 19.99,
+      "category": "seafood",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "802",
+      "name": "Shrimp Curry",
+      "description": "Jumbo shrimp in creamy coconut curry with curry leaves",
+      "price": 21.99,
+      "category": "seafood",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "803",
+      "name": "Fish Tikka",
+      "description": "Marinated fish fillets grilled in tandoor with spices",
+      "price": 20.99,
+      "category": "seafood",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "804",
+      "name": "Shrimp Biryani",
+      "description": "Fragrant basmati rice layered with spiced shrimp and saffron",
+      "price": 23.99,
+      "category": "seafood",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "901",
       "name": "Gulab Jamun",
-      "description": "Sweet milk dumplings in rose-flavored syrup",
+      "description": "Sweet milk dumplings in rose-flavored sugar syrup",
       "price": 5.99,
       "category": "desserts",
       "image": null,
@@ -61,7 +441,57 @@
       "outOfStock": false
     },
     {
-      "id": "7",
+      "id": "902",
+      "name": "Rasmalai",
+      "description": "Soft cheese patties in sweetened milk with cardamom and pistachios",
+      "price": 6.99,
+      "category": "desserts",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "903",
+      "name": "Kulfi",
+      "description": "Traditional Indian ice cream flavored with cardamom and pistachios",
+      "price": 4.99,
+      "category": "desserts",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "904",
+      "name": "Kheer",
+      "description": "Rice pudding with milk, cardamom, and nuts",
+      "price": 5.99,
+      "category": "desserts",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "905",
+      "name": "Gajar Halwa",
+      "description": "Carrot pudding with milk, ghee, and nuts",
+      "price": 6.99,
+      "category": "desserts",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "1001",
+      "name": "Basmati Rice",
+      "description": "Fluffy, fragrant long-grain basmati rice, steamed to perfection",
+      "price": 4.00,
+      "category": "sides",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "1002",
       "name": "Mango Lassi",
       "description": "Refreshing yogurt-based mango drink",
       "price": 3.99,
@@ -71,61 +501,81 @@
       "outOfStock": false
     },
     {
-      "id": "8",
-      "name": "Palak Paneer",
-      "description": "Fresh cottage cheese in creamy spinach curry",
-      "price": 15.99,
-      "category": "vegetarian",
+      "id": "1003",
+      "name": "Sweet Lassi",
+      "description": "Traditional yogurt drink sweetened with sugar",
+      "price": 3.49,
+      "category": "sides",
       "image": null,
       "dietary": ["vegetarian"],
       "outOfStock": false
     },
     {
-      "id": "9",
-      "name": "Lamb Curry",
-      "description": "Tender lamb pieces in aromatic spices",
-      "price": 19.99,
-      "category": "lamb",
-      "image": null,
-      "dietary": ["spicy"],
-      "outOfStock": false
-    },
-    {
-      "id": "10",
-      "name": "Fish Curry",
-      "description": "Fresh fish in coconut curry sauce",
-      "price": 18.99,
-      "category": "seafood",
-      "image": null,
-      "dietary": ["spicy"],
-      "outOfStock": false
-    },
-    {
-      "id": "11",
-      "name": "Goat Curry",
-      "description": "Tender goat meat in traditional spices",
-      "price": 20.99,
-      "category": "goat",
-      "image": null,
-      "dietary": ["spicy"],
-      "outOfStock": false
-    },
-    {
-      "id": "12",
-      "name": "Tomato Soup",
-      "description": "Classic tomato soup with Indian spices",
-      "price": 6.99,
-      "category": "soups",
+      "id": "1004",
+      "name": "Salt Lassi",
+      "description": "Savory yogurt drink with salt and cumin",
+      "price": 3.49,
+      "category": "sides",
       "image": null,
       "dietary": ["vegetarian"],
       "outOfStock": false
     },
     {
-      "id": "13",
-      "name": "Mixed Salad",
-      "description": "Fresh vegetables with house dressing",
-      "price": 7.99,
-      "category": "salads",
+      "id": "1005",
+      "name": "Papadum",
+      "description": "Crispy lentil wafers served with tangy chutneys",
+      "price": 4.00,
+      "category": "sides",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "1006",
+      "name": "Raita",
+      "description": "Cool yogurt mixed with cucumber, tomato, onion, and fresh mint",
+      "price": 5.00,
+      "category": "sides",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "1007",
+      "name": "Mango Chutney",
+      "description": "Sweet and tangy mango chutney with gentle spices",
+      "price": 3.00,
+      "category": "sides",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "1008",
+      "name": "Mixed Pickle",
+      "description": "Zesty medley of pickled vegetables and spices",
+      "price": 4.00,
+      "category": "sides",
+      "image": null,
+      "dietary": ["vegetarian", "vegan", "spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "1009",
+      "name": "Mint Chutney",
+      "description": "Refreshing mint chutney with herbs and green chilies",
+      "price": 3.00,
+      "category": "sides",
+      "image": null,
+      "dietary": ["vegetarian", "vegan"],
+      "outOfStock": false
+    },
+    {
+      "id": "1010",
+      "name": "Tamarind Chutney",
+      "description": "Tangy tamarind chutney with sweet and sour notes",
+      "price": 3.00,
+      "category": "sides",
       "image": null,
       "dietary": ["vegetarian", "vegan"],
       "outOfStock": false
@@ -150,9 +600,9 @@
       }
     ],
     "contact": {
-      "phone": "(555) 123-4567",
-      "address": "123 Main Street, Milford, CT 06460",
-      "email": "info@milfordindianspice.com"
+      "phone": "(508) 634-9999",
+      "address": "130 Main Street, Milford, MA 01757",
+      "email": "support@milfordindiaspice.com"
     }
   }
 } 
