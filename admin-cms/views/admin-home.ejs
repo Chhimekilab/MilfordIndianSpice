@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f8f8; }
+    .admin-box { max-width: 500px; margin: 60px auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px #0001; }
+    h2 { text-align: center; color: #8b0000; }
+    ul { list-style: none; padding: 0; }
+    li { margin: 18px 0; }
+    a { display: block; background: #8b0000; color: #fff; text-decoration: none; padding: 12px; border-radius: 6px; text-align: center; font-size: 1.1rem; }
+    a:hover { background: #a00000; }
+    .logout { background: #bbb; color: #222; margin-top: 30px; }
+    .logout:hover { background: #888; color: #fff; }
+  </style>
+</head>
+<body>
+  <div class="admin-box">
+    <h2>Admin Dashboard</h2>
+    <ul>
+      <li><a href="/admin/menu">Manage Menu Items</a></li>
+      <li><a href="/admin/categories">Manage Categories</a></li>
+      <li><a href="/admin/hours">Edit Store Hours</a></li>
+      <li><a href="/admin/announcements">Edit Announcements</a></li>
+      <li><a href="/admin/links">Edit Embedded Links</a></li>
+    </ul>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+</body>
+</html> 
