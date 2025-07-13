@@ -1,0 +1,98 @@
+{
+  "menu": [
+    {
+      "id": "1",
+      "name": "Vegetable Samosa",
+      "description": "Crispy pastry filled with spiced potatoes and peas",
+      "price": 4.99,
+      "category": "appetizers",
+      "image": "/menu-images/vegetable-samosa.jpg",
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "2",
+      "name": "Gobi Pakora",
+      "description": "Crispy cauliflower fritters with aromatic spices",
+      "price": 4.49,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "3",
+      "name": "Chicken Tikka Masala",
+      "description": "Tender chicken in creamy tomato-based curry",
+      "price": 16.99,
+      "category": "main-courses",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "4",
+      "name": "Butter Chicken",
+      "description": "Creamy and rich chicken curry with butter and cream",
+      "price": 17.99,
+      "category": "main-courses",
+      "image": null,
+      "dietary": [],
+      "outOfStock": false
+    },
+    {
+      "id": "5",
+      "name": "Naan Bread",
+      "description": "Soft and fluffy Indian flatbread",
+      "price": 2.99,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "6",
+      "name": "Gulab Jamun",
+      "description": "Sweet milk dumplings in rose-flavored syrup",
+      "price": 5.99,
+      "category": "desserts",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "7",
+      "name": "Mango Lassi",
+      "description": "Refreshing yogurt-based mango drink",
+      "price": 3.99,
+      "category": "beverages",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    }
+  ],
+  "settings": {
+    "storeHours": {
+      "monday": "11:00 AM - 9:30 PM",
+      "tuesday": "11:00 AM - 9:30 PM",
+      "wednesday": "11:00 AM - 9:30 PM",
+      "thursday": "11:00 AM - 9:30 PM",
+      "friday": "11:00 AM - 9:30 PM",
+      "saturday": "11:00 AM - 9:30 PM",
+      "sunday": "11:00 AM - 9:30 PM"
+    },
+    "announcements": [
+      {
+        "id": "1",
+        "text": "Use code WELCOME10 for 10% off your first order!",
+        "active": true,
+        "type": "promo"
+      }
+    ],
+    "contact": {
+      "phone": "(555) 123-4567",
+      "address": "123 Main Street, Milford, CT 06460",
+      "email": "info@milfordindianspice.com"
+    }
+  }
+} 
