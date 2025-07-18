@@ -1,5 +1,5 @@
 # Robots.txt for Milford India Spice
-# https://milfordiindiaspice.com/robots.txt
+# https://www.milfordindiaspice.com/robots.txt
 
 User-agent: *
 Allow: /
@@ -29,7 +29,7 @@ Allow: *.ico
 # Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://milfordiindiaspice.com/sitemap.xml
+Sitemap: https://www.milfordindiaspice.com/sitemap.xml
 
 # Specific instructions for Google
 User-agent: Googlebot
