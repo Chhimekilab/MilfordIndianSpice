@@ -1,0 +1,19 @@
+# Ensure XML files are served with correct content type
+<Files "*.xml">
+    Header set Content-Type "application/xml; charset=utf-8"
+</Files>
+
+# Alternative method if Header directive doesn't work
+AddType application/xml .xml
+
+# Enable compression for XML files
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+</IfModule>
+
+# Cache control for sitemap
+<Files "sitemap.xml">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 day"
+</Files>
