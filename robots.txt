@@ -8,6 +8,9 @@ Allow: /menu.html
 Allow: /menu-images/
 Allow: /sitemap.xml
 
+# Sitemap location
+Sitemap: https://www.milfordindiaspice.com/sitemap.xml
+
 # Disallow any potential admin or private areas
 Disallow: /admin/
 Disallow: /private/
