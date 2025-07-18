@@ -1,10 +1,10 @@
-# Ensure XML files are served with correct content type
+# Ensure XML files are served with correct content type for proper browser display
 <Files "*.xml">
-    Header set Content-Type "application/xml; charset=utf-8"
+    Header set Content-Type "text/xml; charset=utf-8"
 </Files>
 
 # Alternative method if Header directive doesn't work
-AddType application/xml .xml
+AddType text/xml .xml
 
 # Enable compression for XML files
 <IfModule mod_deflate.c>
