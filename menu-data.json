@@ -1,0 +1,390 @@
+{
+  "menu": [
+    {
+      "id": "1",
+      "name": "Vegetable Samosa",
+      "description": "Crispy pastry shells filled with spiced mashed potatoes and green peas, served with tangy tamarind chutney.",
+      "price": 7.00,
+      "category": "appetizers",
+      "image": "/menu-images/vegetable-samosa.jpg",
+      "dietary": ["vegetarian", "gluten-free", "dairy-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "2",
+      "name": "Vegetable Pakora",
+      "description": "Crisp fritters made from assorted vegetables dipped in spiced gram flour batter and deep-fried to golden perfection.",
+      "price": 7.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian"],
+      "outOfStock": false
+    },
+    {
+      "id": "3",
+      "name": "Gobi Pakora",
+      "description": "Cauliflower florets dipped in a seasoned chickpea flour batter and deep-fried until golden and crispy, delivering a warm, crunchy bite in every piece.",
+      "price": 7.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "4",
+      "name": "Chicken Pakora",
+      "description": "Crispy chicken strips dipped in chickpea batter and fried with garlic, ginger, and house spices.",
+      "price": 9.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "5",
+      "name": "Vegetable Platter",
+      "description": "Sampler platter featuring samosa, pakora, aloo tikki, gobi pakora.",
+      "price": 15.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free", "dairy-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "6",
+      "name": "Non-Vegetable Platter",
+      "description": "Sampler platter featuring samosa, pakora, aloo tikki, Kashmiri tikka, and chicken pakora.",
+      "price": 17.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "7",
+      "name": "Kashmiri Tikki",
+      "description": "Chicken thigh marinated in Kashmiri chili, garlic, ginger, and mustard oil, grilled in the tandoor.",
+      "price": 9.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy", "hot"],
+      "outOfStock": false
+    },
+    {
+      "id": "8",
+      "name": "Chicken 65",
+      "description": "Chicken bites stir-fried with mustard seeds, curry leaves, garlic, and spicy chili sauce.",
+      "price": 9.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy", "hot"],
+      "outOfStock": false
+    },
+    {
+      "id": "9",
+      "name": "Indian Tandoori Wings (Smoked)",
+      "description": "Tandoori-marinated chicken wings char-grilled and tossed in a smoky vindaloo-buffalo glaze.",
+      "price": 10.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["spicy", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "10",
+      "name": "Paneer Chilli",
+      "description": "Cottage cheese cubes tossed with onions and bell peppers in a bold chili-garlic sauce.",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "dairy", "spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "11",
+      "name": "Aloo Tikki",
+      "description": "Pan-fried potato patties spiced with green peas, spinach, roasted chickpea flour, and tangy chaat masala.",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "dairy-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "12",
+      "name": "Samosa Chaat",
+      "description": "Crushed vegetable samosas, chickpeas, yogurt, tamarind chutney, mint chutney, and spices.",
+      "price": 9.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "dairy", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "13",
+      "name": "Vegetable Chowmein",
+      "description": "Stir-fried noodles with fresh vegetables, bell peppers, onions, carrots, and scallions in a soy-sesame glaze.",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "14",
+      "name": "Chicken Chowmein",
+      "description": "Wok-tossed noodles with chicken, cabbage, bell peppers, carrots, onions, and scallions in soy and sesame sauce.",
+      "price": 13.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "15",
+      "name": "Shrimp Chowmein",
+      "description": "Shrimp stir-fried with noodles, bell peppers, cabbage, onions, and carrots in savory soy-sesame sauce.",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["seafood", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "16",
+      "name": "House Special Chowmein",
+      "description": "Signature noodles with chicken, shrimp, eggs, mushroom & vegetables, and scallions in a sesame-soy chili sauce.",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["gluten-free", "spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "17",
+      "name": "Vegetable Momo (Steamed/Fried)",
+      "description": "Steamed or fried vegetable momos stuffed with seasoned veggies, cottage cheese, served with tomato-sesame peanut chutney.",
+      "price": 12.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "18",
+      "name": "Chicken Momo (Steamed/Fried)",
+      "description": "Steamed or fried chicken momos stuffed with minced chicken, vegetables, and spices, served with tomato-sesame peanut chutney.",
+      "price": 13.00,
+      "category": "appetizers",
+      "image": null,
+      "dietary": ["gluten-free", "spicy"],
+      "outOfStock": false
+    },
+    {
+      "id": "19",
+      "name": "Mulligatawny Soup (Daal Soup)",
+      "description": "Traditional lentil soup with aromatic spices, vegetables, and herbs.",
+      "price": 6.00,
+      "category": "soups",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "20",
+      "name": "Coconut Tomato Soup",
+      "description": "Creamy tomato soup with coconut milk and aromatic spices.",
+      "price": 6.00,
+      "category": "soups",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "21",
+      "name": "Chicken Noodles Soup (Indo-Chinese)",
+      "description": "Hearty chicken noodle soup with vegetables and Indo-Chinese spices.",
+      "price": 7.00,
+      "category": "soups",
+      "image": null,
+      "dietary": ["gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "22",
+      "name": "Fresh Veg Salad",
+      "description": "Fresh mixed vegetables with house dressing and herbs.",
+      "price": 8.00,
+      "category": "salads",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free", "dairy-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "23",
+      "name": "Fresh Chicken Salad",
+      "description": "Fresh mixed vegetables with grilled chicken and house dressing.",
+      "price": 10.00,
+      "category": "salads",
+      "image": null,
+      "dietary": ["gluten-free", "dairy-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "24",
+      "name": "Fresh Shrimp Salad",
+      "description": "Fresh mixed vegetables with grilled shrimp and house dressing.",
+      "price": 12.00,
+      "category": "salads",
+      "image": null,
+      "dietary": ["seafood", "gluten-free", "dairy-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "25",
+      "name": "Fresh Paneer Salad",
+      "description": "Fresh mixed vegetables with grilled paneer and house dressing.",
+      "price": 10.00,
+      "category": "salads",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "26",
+      "name": "Butter Naan",
+      "description": "Soft and fluffy Indian flatbread brushed with butter.",
+      "price": 3.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "27",
+      "name": "Garlic Naan",
+      "description": "Soft naan bread topped with garlic and herbs.",
+      "price": 3.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "28",
+      "name": "Coconut Peshwari Naan",
+      "description": "Sweet naan stuffed with coconut, nuts, and dried fruits.",
+      "price": 4.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "29",
+      "name": "Sesame Naan",
+      "description": "Naan bread topped with sesame seeds.",
+      "price": 3.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "30",
+      "name": "Onion Naan",
+      "description": "Naan bread topped with onions and herbs.",
+      "price": 3.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "31",
+      "name": "Bread Basket",
+      "description": "Assortment of fresh naan breads.",
+      "price": 8.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    },
+    {
+      "id": "32",
+      "name": "Tandoori Roti",
+      "description": "Whole wheat flatbread cooked in tandoor.",
+      "price": 2.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "33",
+      "name": "Plain Paratha",
+      "description": "Layered whole wheat flatbread.",
+      "price": 2.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "34",
+      "name": "Aloo Paratha",
+      "description": "Stuffed paratha with spiced potato filling.",
+      "price": 3.50,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "gluten-free"],
+      "outOfStock": false
+    },
+    {
+      "id": "35",
+      "name": "Aloo Naan",
+      "description": "Naan bread stuffed with spiced potato filling.",
+      "price": 4.00,
+      "category": "breads",
+      "image": null,
+      "dietary": ["vegetarian", "dairy"],
+      "outOfStock": false
+    }
+  ],
+  "settings": {
+    "storeHours": {
+      "monday": "11:00 AM - 9:30 PM",
+      "tuesday": "Closed",
+      "wednesday": "11:00 AM - 9:30 PM",
+      "thursday": "11:00 AM - 9:30 PM",
+      "friday": "11:00 AM - 9:30 PM",
+      "saturday": "11:00 AM - 9:30 PM",
+      "sunday": "11:00 AM - 9:30 PM"
+    },
+    "announcements": [
+      {
+        "id": "1",
+        "text": "🎉 Opening Soon: We're opening soon and can't wait to share our culinary creations with you! 🥘",
+        "active": true,
+        "type": "announcement"
+      },
+      {
+        "id": "2",
+        "text": "🕒 Special Offer: Use promocode \"NewBegining\" for 20% off your order!",
+        "active": true,
+        "type": "promo"
+      },
+      {
+        "id": "3",
+        "text": "🌟 Catering Available: Planning a party? We now cater for private events and gatherings. Call us to create your perfect feast!",
+        "active": true,
+        "type": "service"
+      }
+    ],
+    "contact": {
+      "phone": "(508) 634-9999",
+      "address": "130 Main Street, Milford, MA 01757",
+      "email": "support@milfordindiaspice.com"
+    }
+  }
+} 
