@@ -54,6 +54,11 @@ function requireLogin(req, res, next) {
   res.redirect('/login');
 }
 
+// Root route - redirect to login
+app.get('/', (req, res) => {
+  res.redirect('/login');
+});
+
 app.get('/login', (req, res) => {
   res.render('login', { error: null });
 });
